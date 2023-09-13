@@ -16,11 +16,11 @@ class PostController extends Controller
     
     public function index()
     {
-        $posts = Post::latest()->where('published_at','!=','NULL');
-    $title = 'Semua Post';
+        $posts = Post::where('published_at','!=','NULL')->latest('published_at');
+        $title = 'Semua Post';
         if(request('search')){
-            $posts->where('title','like', '%'.request('search').'%')
-                    ->orWhere('body','like', '%'.request('search').'%');
+            $posts = Post::where('title','like', '%'.request('search').'%')
+                    ->orWhere('body','like', '%'.request('search').'%')->latest('published_at');
             $title = 'Hasil Pencarian';
         }
         return view('home.posts', [

@@ -38,7 +38,7 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories/{category:slug}', function(Category $category){
     return view('home.posts',[
         'title' => "Kategori $category->name",
-        'posts' => $category->posts()->paginate(5),
+        'posts' => $category->posts()->latest('published_at')->paginate(5),
         'category' => $category->name,
         'categories' => Category::all()
     ]);

@@ -14,9 +14,18 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $latestPost = Post::latest('created_at')->where('published_at','!=','')->first();
+        $nextPost = Post::where('created_at', '<', $latestPost->created_at)
+            ->where('published_at','!=','')
+            ->latest('created_at')
+            ->skip(1) // Ganti nilai ini dengan 1 jika Anda ingin mendapatkan post berikutnya
+            ->take(5)
+            ->get();
+
         return view('home.home', [
             "title" => "RSUD Sambas",
-            "posts" => Post::latest()->where('published_at','!=','')->take(8)->get(),
+            "latestPost" => $latestPost,
+            "nextPost" => $nextPost,
             "layanan" => Service::orderBy('created_at', 'asc')->get(),
             "katasambutan" => KataSambutan::latest()->first()
         ]);

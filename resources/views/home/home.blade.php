@@ -36,6 +36,17 @@
                      
 }
 
+.img-container {
+  width: 100%; /* Lebar container */
+  max-height: 300px; /* Tinggi maksimal */
+  overflow: hidden; /* Untuk memotong gambar yang berlebihan */
+}
+
+.img-container img {
+  width: 100%; /* Gambar mengisi lebar container */
+  height: 100%; /* Gambar mengisi tinggi container */
+  object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
+}
 
 
 @media screen and (max-width: 768px) {
@@ -57,108 +68,7 @@
   
   <div class="row">
     <div class="col-lg-8 col-md-8">
-      <div class="divider text-start">
-        <div class="divider-text">
-          <h5 class="text-muted"> <i class='bx bx-menu-alt-left bx-tada' ></i> Menu : </h5>
-        </div>
-      </div>
-        <div class="row">
-          <div class="col-6 col-md-4 col-lg-3">       
-            <div class="shadow card mb-3 link">
-              <div class="card-body">
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#profil" aria-controls="offcanvasStart">
-                <div class="card-title d-flex align-items-start justify-content-between">
-                  <span class="avatar-initial rounded bg-label-primary p-3"><i class='bx bxs-user-detail'></i></span>
-                   </div>
-                   <span class="fs-85 fw-semibold d-block">Profil</span>
-                   </a>
-              </div> 
-            </div>
-            </a>
-          </div>
-          {{-- Canvas Profile --}}
-                      <div
-                          class="offcanvas offcanvas-start"
-                          tabindex="-1"
-                          id="profil"
-                          aria-labelledby="offcanvasStartLabel"
-                        >
-                          <div class="offcanvas-header">
-                            <h5 id="offcanvasStartLabel" class="offcanvas-title">Profil</h5>
-                            <button
-                              type="button"
-                              class="btn-close text-reset"
-                              data-bs-dismiss="offcanvas"
-                              aria-label="Close"
-                            ></button>
-                          </div>
-                          <div class="offcanvas-body my-auto mx-0 flex-grow-0">
-                            <p class="text-center text-white">
-                              <img src="{{ asset('storage/rsud.png') }}" width="100%"  class="rounded">
-                            </p>
-                            <h6> Rumah Sakit Umum Daerah Sambas </h6>
-                            <hr class="text-muted">
-                            <a href="/profil/sejarah" class="btn btn-primary mb-2  w-100" align="left"><i class='bx bx-history bx-tada' ></i> Sejarah </a>
-                            <a href="/profil/visi-misi" class="text-left btn btn-info mb-2  w-100"><i class='bx bx-message-dots bx-tada' ></i> Visi & Misi </a>
-                            
-                          </div>
-                        </div>
-
-
-          <div class="col-6 col-md-4 col-lg-3">
-            <div class="shadow card mb-3 link">
-              <div class="card-body">
-                <a href="..">
-                   <div class="card-title d-flex align-items-start justify-content-between">
-                  <span class="avatar-initial rounded bg-label-primary p-3"><i class='bx bx-info-circle'></i></span>
-                   </div>
-                   <span class="fs-85 fw-semibold d-block">Info Pelayanan</span>
-                </a>
-              </div> 
-            </div>
-            </a>
-          </div>          
-          <div class="col-6 col-md-4 col-lg-3">
-            <div class="shadow card mb-3 link">
-              <div class="card-body">
-                <a href="..">
-                   <div class="card-title d-flex align-items-start justify-content-between">
-                  <span class="avatar-initial rounded bg-label-primary text-white p-3"><i class='bx bxs-timer'></i></span>
-                   </div>
-                   <span class="fs-85 fw-semibold d-block">Jadwal Dokter</span>
-                </a>
-              </div> 
-            </div>
-            </a>
-          </div>
-          
-          
-          <div class="col-6 col-md-4 col-lg-3">
-            <div class="shadow card mb-3 link">
-              <div class="card-body">
-                <a href="..">
-                   <div class="card-title d-flex align-items-start justify-content-between">
-                  <span class="avatar-initial rounded bg-label-warning p-3"><i class='bx bxs-contact' ></i></span>
-                   </div>
-                   <span class="fs-85 fw-semibold d-block">Hubungi Kami</span>
-                </a>
-              </div> 
-            </div>
-            </a>
-          </div>
-          
-          <div class="col-12 col-md-8 col-lg-12">
-            <div class="shadow card link">
-              <div class="card-body p-0">
-                <a href="//rsudsambas.co.id/web/pendaftar">
-                    <img src="{{ asset('storage/ayo-daftar-online2.png') }}" class="img-100 rounded">
-                </a>
-              </div> 
-            </div>
-            </a>
-          </div>
-          
-        </div>
+      @include('layouts.menu')
     </div>
     <div class="col-lg-4 col-md-4">
       <div class="divider text-start">
@@ -168,24 +78,85 @@
       </div>
       <div class="card mb-3">
         <div class="row g-0">
-          <div class="col-md-4">
-            <img class="card-img card-img-left" src="{{ asset('storage/'.$katasambutan->image) }}" alt="Card image" />
+          <div class="col-3 col-md-3 col-lg-3">
+            <img class=" rounded p-3" src="{{ asset('storage/'.$katasambutan->image) }}" alt="Kata Sambutan" width="100" />
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{ $katasambutan->nama }} </h5>
-              <p class="card-text">
-                {!! str_replace('<div>','',Str::limit($katasambutan->isi, '150', '...')) !!}.
-              </p><div class="article-cta text-right">
-                <a href="/kata-sambutan"> Lihat Selengkapnya <i class="fas fa-chevron-right"></i> </a>
-              </div>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+          <div class="col-9 col-md-9 col-lg-9">
+              <h5 class="card-title p-2 pt-3 mb-0">{{ $katasambutan->nama }} </h5>
+              <p class="text-muted p-2">{{ $katasambutan->jabatan }}
+          </div>
+        </div> <div class="card-text p-3" align="justify">
+                {!! str_replace('<div>','',Str::limit($katasambutan->isi, '200', '   ...')) !!}
+                  <div align="right" class="pt-2"> <a href="/kata-sambutan" class="btn btn-secondary btn-sm"> Lihat Selengkapnya &raquo; </a> </div>
+                </div>
+              
+             </div>
           </div>
         </div>
       </div>
+{{-- end row menu sambutan --}}
+
+{{-- Postingan --}}
+<div class="container-xxl flex-grow-1"> 
+  <div class="divider text-start">
+    <div class="divider-text">
+      <h5 class="text-muted"> <i class='bx bx-news' ></i> Postingan Terbaru : </h5>
     </div>
+  </div>
+<div class="row">
+  <div class="col-lg-6 col-md-6">
+    <div class="card mb-3">
+      <div class="card-body">
+       
+        <span class="badge bg-label-secondary"><i class='bx bxs-time-five'></i> {{ Carbon\Carbon::parse($latestPost->published_at)->format('l, d F Y'); }}</span> 
+        
+        <a class="mb-2 text-white badge badge-lg bg-info"  href="/categories/{{ $latestPost->category->slug }}"><i class='bx bx-folder' ></i> {{ $latestPost->category->name }} </a>
+  
+        <div class="img-container mb-4 shadow ">
+          <img width="100%" class="img rounded" src="@if($latestPost->foto != '') {{ asset('storage/'.$latestPost->foto) }}" 
+              @else {{ asset('assets/img/news/img13.jpg') }}
+               @endif> 
+              </div>
+        <h5 class="card-title text-muted" align="justify"><a href="/posts/{{ $latestPost->slug }}">{{ $latestPost->title }}</a></h5>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-md-6 mb-3">
+    @foreach ($nextPost as $post)
+                
+    <div class="card shadow mb-2">
+        <div class="card-body p-3">
+            <div class="row">
+                <div class="col-4 col-md-2 col-lg-2 mb-1">
+                    @if($post->foto)
+                    <img  class="img rounded" src="{{ asset('storage/'.$post->foto) }}" width="100%" height="80" style="float:left; padding:0px; padding-right: 5px;">
+                     @else
+                     <img  class="img rounded" src="{{ asset('assets/img/news/img13.jpg') }}" width="100%"  height="80" style="float:left; padding:0px; padding-right: 5px;">
+                    @endif
+                </div>
+                <div class="col-md-10 col-8 col-lg-10">
+                  <p class="card-text" style="font-size: 11px;">
+                    <span class="text-white badge bg-secondary">  {{ Carbon\Carbon::parse($post->published_at)->format('d F Y'); }} </span>
+                    <a class="text-white badge bg-info"  href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }} </a></p>
+                    
+                    <h6 class="card-title text-muted"> <a href="/posts/{{ $post->slug }}"> {{ $post->title }}</a></h5>
+                    
+                 </div>
+                 
+            </div>
+        </div>
+    </div>
+@endforeach 
+<div align="right" class="pt-2"> <a href="/posts" class="btn btn-primary btn-sm"> Lihat Semua &raquo; </a> </div>
+  </div>
+</div>
+{{-- End Post Area --}}
+<div class="bg-label-primary p-0 mb-2">
+  <img class="img rounded" src="{{ asset('storage/footer.jpg') }}" width="100%">
 </div>
 
-
+</div>
 @endsection

@@ -141,7 +141,8 @@
                 @yield('container')
             </div>
 </body>
-<footer class="footer bg-light">
+<footer class="footer bg-light p-0 mb-0">
+  {{-- <img src="{{ asset('storage/footer3.jpg') }}" width="100%"> --}}
     <div
       class="container-fluid d-flex flex-md-row flex-column justify-content-between align-items-md-center gap-1 container-p-x py-3"
     >
