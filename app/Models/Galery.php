@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Poliklinik extends Model
+class Galery extends Model
 {
     use HasFactory;
-    protected $table = "m_poly";
-
+    protected $table = 'galeries';
     protected $guarded = ['id'];
-    
+
+    public function galeri_foto()
+    {
+        return $this->hasMany(GaleryFoto::class);
+    }
 }

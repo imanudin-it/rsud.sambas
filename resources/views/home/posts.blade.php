@@ -1,28 +1,21 @@
 @extends('layouts.main')
 
 @section('container')
-<style>
-    .img-container {
-  width: 100%; /* Lebar container */
-  max-height: 200px; /* Tinggi maksimal */
-  overflow: hidden; /* Untuk memotong gambar yang berlebihan */
-}
 
-.img-container img {
-  width: 100%; /* Gambar mengisi lebar container */
-  height: 100%; /* Gambar mengisi tinggi container */
-  object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
-}
-</style>
 <div class="container-xxl flex-grow-1 pt-3">
     
     <div class="row">
         <div class="col-md-8 col-lg-8">
-            <div class="divider text-start">
+            <div class="divider text-center">
                 <div class="divider-text">
-                    <h5 class="text-muted"> <i class='bx bx-news' ></i> {{ $title }} : </h5>
+                    <h5 class="text-muted fw-bold"> <i class='bx bx-news bx-tada' ></i> {{ $title }} : </h5>
                 </div>
+            </div> 
+            @if(request('search'))
+            <div class="alert bg-label-primary pt-2 mb-3 text-muted">
+                <i class='bx bx-search-alt'></i> " {{ request('search') }} "
             </div>
+            @endif
           @if($posts->count()) 
             @foreach ($posts as $post)
                     <div class="card shadow mb-1">
@@ -46,7 +39,7 @@
                                             <hr class="text-muted m-2">
                                              <p class="mb-3 text-justify">{{ str_replace('<div>','',Str::limit($post->body, '150','...')) }}</p>  
                                              <div align="right">
-                                                <a href="/posts/{{ $post->slug }}"> Baca Selengkapnya &raquo; <i class="fas fa-chevron-right"></i> </a>
+                                                <a class="badge bg-label-secondary p-2" href="/posts/{{ $post->slug }}"> Baca Selengkapnya &raquo; <i class="fas fa-chevron-right"></i> </a>
                 
                                                 </div>
                                  </div>
@@ -71,26 +64,11 @@
              </div>
                @endif
             </div>
-        <div class="col-md-8 col-lg-4">
-            <div class="divider text-start">
-                <div class="divider-text">
-                    <h5 class="text-muted"> <i class='bx bxs-folder-open'></i> Kategori : </h5>
-                </div>
+            <div class="col-md-8 col-lg-4">
+                @include('layouts.kategori')
+                @include('layouts.menu-kanan')
+                
             </div>
-            <div class="card mb-4">
-                <div class="card-body p-0">
-                <ul class="list-group">
-                    @foreach ($categories as $category)
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      <a href="/categories/{{ $category->slug }}"><i class='bx bxs-folder'></i> {{ $category->name }}</a>
-                      <span class="badge bg-label-primary">{{ $category->posts->count() }}</span>
-                    </li>
-                    @endforeach
-                    <li class="text-white list-group-item d-flex justify-content-between align-items-center bg-secondary"><a href="/posts/" class="text-white"> <i class='bx bx-grid-small'></i> Lihat Semua Artikel </a>
-                  </ul>
-                </div>
-        </div>
-        </div>
     </div>
  
 @endsection

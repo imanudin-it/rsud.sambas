@@ -37,10 +37,10 @@ class PostController extends Controller
         $article = $post->load('author', 'category');
         $relatedArticles = $article->category->posts()->where('category_id', '=', $article->category_id)->latest()->take(5)->get();
         $title = $post->title;
-
+        $categories = Category::all();
         $post->incrementReadCount();
        
-        return view('home.post', compact('post','relatedArticles', 'title'));
+        return view('home.post', compact('post','relatedArticles', 'title', 'categories' ));
     }
 
     

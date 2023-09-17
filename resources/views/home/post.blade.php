@@ -1,23 +1,21 @@
 @extends('layouts.main')
 
 @section('container')
-<section class="section">
-    <div class="m-0 row">
-        <div class="col-md-8 col-lg-8 p-1">
-        <div class="section-header mb-1">
-           
-      <h1> {{ $post->title }} </h1>
-      
-    </div>
-
-    <div class="section-body mb-0">
-        <div class="bg-whitesmoke p-2 text-right">
-            <i class="fa fa-clock p-1"></i> {{ Carbon\Carbon::parse($post->published_at)->format('D, d M Y') }} 
-            <i class="fa fa-folder p-1"></i> <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }} </a> 
-             
-      </div>
-       <article class="shadow article article-style-b">
-                        <div style="max-height: 400px; overflow:hidden;">
+<div class="container-xxl flex-grow-1 pt-3">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="card mb-3">
+          <div class="card-header bg-label-secondary"> 
+            <div class="card-title"> 
+            <h4> {{ $post->title }} </h4>
+            </div>
+            </div>
+            <div class="card-body pt-4" align="justify">
+                <p class="card-text">
+                    <span class="text-white badge bg-secondary">  {{ Carbon\Carbon::parse($post->published_at)->format('d F Y'); }} </span>
+              <a class="text-white badge bg-info"  href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }} </a>
+              </p>        
+                <div style="max-height: 400px; overflow:hidden;">
                             <img src="{{ asset('storage/'.$post->foto) }}" width="100%" class="p-1">
                         </div>
                         <div class="article-details" style="text-align: justify;">
@@ -31,30 +29,42 @@
                     
                 </div>
         </div>
- <div class="col-lg-4 p-1">
-    <div class="shadow section-header mb-1">
-        <h1> <i class="fa-regular fa-newspaper"></i>&nbsp; {{ $post->category->name }} Lainnya :</h1>
+      </div>
+ <div class="col-lg-4">
+    <div class="divider text-center">
+        <div class="divider-text">
+          <h5 class="text-muted fw-bold"> <i class='bx bx-news' ></i> {{ $post->category->name }} Terkait : </h5>
         </div>
-    <div class="section-body p-3 bg-white">
-        <ul class="list-unstyled list-unstyled-border">
-          @foreach ($relatedArticles as $terkait)
-          <li class="media">
-            <img class="mr-3 rounded" src="{{ asset('storage/'.$terkait->foto) }}" alt="image" width="55" style="width:55px; height:60px;">
-            <div class="media-body">
-                {{-- <div class="float-right text-primary"></div> --}}
-                        <div class="media-title"><a href="/posts/{{ $terkait->slug }}">{{ $terkait->title }}</a></div>
-                        <span class="text-small text-muted"> {!! Str::limit($terkait->body,'50','..') !!}</span>
+      </div>
+    @foreach ($relatedArticles as $terkait)
+          <div class="card shadow mb-2">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-4 col-md-4 col-lg-4 mb-1"style="max-height: 80px; overflow: hidden;">
+                        @if($post->foto)
+                        <img  class="img rounded" src="{{ asset('storage/'.$terkait->foto) }}" width="100%">
+                         @else
+                         <img  class="img rounded" src="{{ asset('assets/img/news/img13.jpg') }}" width="100%">
+                        @endif
+                    </div>
+                    <div class="col-md-8 col-8 col-lg-8">
+                      <p class="card-text" style="font-size: 11px;">
+                        <span class="text-white badge bg-secondary">  {{ Carbon\Carbon::parse($terkait->published_at)->format('d F Y'); }} </span>
+                        <a class="text-white badge bg-info"  href="/categories/{{ $terkait->category->slug }}"> {{ $terkait->category->name }} </a></p>
+                        
+                        <h6 class="card-title text-muted"> <a href="/posts/{{ $terkait->slug }}"> {{ $terkait->title }}</a></h5>
+                        
+                     </div>
+                     
+                </div>
             </div>
-        </li>
-          @endforeach
-        </ul>
-    </div>
-    <div class="card-footer p-0 bg-whitesmoke">
-          <a href="/posts/" class="btn btn-block btn-light btn-sm p-2"> Lihat Semua Artikel </a>
         </div>
-    </div>
+          @endforeach
+          <div align="right" class="pt-2 mb-4"> <a href="/posts" class="btn btn-primary btn-sm"> Lihat Semua &raquo; </a> </div>
+        
+          @include('layouts.kategori')
+        
+        </div>
+      </div>
 </div>
-    </div>
-    </div>
-</section>
 @endsection

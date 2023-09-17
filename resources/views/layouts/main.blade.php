@@ -54,6 +54,8 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 
     <!-- Page CSS -->
+    {{-- <link rel="stylesheet" href="{{ asset('assets/owlcarousel/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/owlcarousel/assets/owl.theme.default.min.css') }}"> --}}
 
     <!-- Helpers -->
     <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
@@ -83,7 +85,37 @@
     background-color: rgb(244, 243, 207);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-    </style>
+
+.bt-primary {
+  border-top : solid 2px #3c598c;
+}
+.bl-primary {
+  border-left : solid 3px #3c598c;
+}
+
+.img-container {
+width: 100%; /* Lebar container */
+max-height: 200px; /* Tinggi maksimal */
+overflow: hidden; /* Untuk memotong gambar yang berlebihan */
+}
+
+.img-container img {
+width: 100%; /* Gambar mengisi lebar container */
+height: 100%; /* Gambar mengisi tinggi container */
+object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
+}
+
+.offcanvas{
+    background-image: url('{{ asset('assets/img/backgrounds/creative.png') }}'); 
+    background-size: 100%; 
+    color: #566a7f; /* Warna teks pada latar belakang gelap */
+    opacity : 0.5em;
+  }
+  .fs-85 {
+  font-size: 85%;
+  color: rgba(44, 107, 173, 0.863);
+}
+</style>
 
   </head>
 
@@ -107,26 +139,65 @@
             >
               <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                 <!-- Search -->
+                <form action="/posts">
+                   
                 <div class="navbar-nav align-items-center">
                   <div class="nav-item d-flex align-items-center">
-                    <i class="bx bx-search fs-4 lh-0"></i>
+                    <i class="bx bx-search fs-4 lh-0" type="submit"></i>
                     <input
                       type="text"
                       class="form-control border-0 shadow-none"
                       placeholder="Pencarian Postingan..."
                       aria-label="Search..."
+                      name="search"
+                      value="{{ request('search') }}"
                     />
                   </div>
                 </div>
+                </form>
                 <!-- /Search -->
   
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
                     <!-- Place this tag where you want the button to render. -->
                    
-                    <li class="nav-item">
-                         <a class="nav-link" href="/">
-                          <span class="w-px-40 h-auto rounded-circle"> <i class='fs-3 bx bx-home' ></i> </span>
+                    <li class="nav-item lh-1 me-2">
+                       <a class="btn bg-label-primary rounded-pill btn-sm" href="/">
+                          <span class="w-px-40 h-auto"> <i class='fs-3 bx bx-home' ></i> </span>
                         </a>
+                    </li>
+                    <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                      <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                        <div class="avatar avatar-online">
+                          <img src="{{ asset('storage/rsud-siap.png') }}" alt="" class="w-px-40 h-auto rounded-circle">
+                        </div>
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar avatar-online">
+                                  <img src="{{ asset('storage/rsud-siap.png') }}" alt="" class="w-px-40 h-auto rounded-circle">
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <span class="fw-semibold d-block">RSUD Sambas</span>
+                                <small class="text-muted"><i class='bx bx-bookmark'></i> Pengunjung</small>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        
+                        <li>
+                          <div class="dropdown-divider"></div>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="/login/">
+                            <i class='bx bx-log-in-circle me-2'></i>
+                            <span class="align-middle"> Masuk</span>
+                          </a>
+                        </li>
+                      </ul>
                     </li>
                     <!-- User -->
                                   </ul>
@@ -140,28 +211,29 @@
               <!-- Content -->
                 @yield('container')
             </div>
+            
 </body>
-<footer class="footer bg-light p-0 mb-0">
+
+<img src="{{ asset('storage/footer.jpg') }}" width="100%">
+<footer class="footer text-muted bg-dark p-0 mb-0">
   {{-- <img src="{{ asset('storage/footer3.jpg') }}" width="100%"> --}}
     <div
       class="container-fluid d-flex flex-md-row flex-column justify-content-between align-items-md-center gap-1 container-p-x py-3"
     >
+    
       <div>
-        <a
-          href="/index/"
-          class="footer-text fw-bolder"
-          >RSUD SAMBAS</a
+        
+        <h2
+          class="footer-text text-muted fw-bolder mb-1"
+          >RSUD SAMBAS</h2
         > <br> <small> &copy; {{ date('Y') }} &bull; PKRS &bull; TIM IT </small>
       </div>
       <div>
         <div class="dropdown dropup footer-link me-3">
           <a
-            type="button"
-            class="btn btn-sm btn-outline-secondary"
-            
             href="https://facebook.com/imanudin.it"
           >
-            TIM IT &bull; IManudin </a>
+          <i class='bx bx-terminal'></i> IManudin </a>
         </a>
           
         </div>
@@ -195,7 +267,59 @@
             $('#background-loading').fadeOut("slow");
         });
     </script> --}}
+<script>
+    $(document).ready(function() {
+        // Tangani saat formulir dikirim
+        $('#cari').click(function() {
+            
+            var tglPeriksa = $('#tglPeriksa').val();
+            var kodePoli = $('#kodePoli').val();
+            var namaPoli = $('#kodePoli option:selected').text();
 
+            if (tglPeriksa === '' || kodePoli === '') {
+              $('#response').show();
+
+              $('#response').html('<div class="pt-3 alert alert-danger" align="center"> <i class="bx bx-error bx-tada"></i> Tgl Periksa atau Spesialis tidak boleh kosong ! </div>');
+                      return;
+            }
+            // Tampilkan elemen "loading"
+              $('#loading').show();
+              $('#response').hide();
+              
+            // Lakukan permintaan Ajax
+            $.ajax({
+                type: 'GET',
+                url: '/jadwal-dokter/' + kodePoli + '/' + tglPeriksa,
+                dataType: 'json', // Menentukan tipe data yang diharapkan dari respons
+                success: function(data) {
+                  // Sembunyikan elemen "loading" setelah permintaan selesai
+                  $('#loading').hide();
+                  $('#response').show();
+
+                  if (data.metadata) {
+                      $('#response').html('<div class="pt-3 alert alert-danger" align="center"> ' + namaPoli + ' : ' + tglPeriksa + ' <hr class="text-muted"> <i class="bx bx-error bx-tada"></i> Tidak ada jadwal atau dokter tidak tersedia.</div>');
+                      return;
+                  }
+                // Tangani respons yang diterima
+                    var responseHtml = '<div class="card mb-1 p-0"> <div class="bg-label-primary text-center card-header mb-1"> ' + data[0].namahari + ', ' + tglPeriksa + ' : </div> <div class="card-body p-1"> <ul class="list-group"> ';
+                    $.each(data, function(index, jadwal) {
+                        responseHtml += '<li class="list-group-item d-flex justify-content-between align-items-center"><small> <i class="bx bxs-user-circle"></i> ' + jadwal.namadokter + '  </small> <span class="badge bg-success"> BUKA </span></li>';
+                    });
+                    responseHtml += '</ul></div>';
+                    responseHtml += ' <div class="card-footer p-3 bg-label-secondary"><small class="text-muted"> Sumber : <br> Jadwal Dokter dari Sistem BPJS Kesehatan</small></div> </div>';
+                    $('#response').html(responseHtml); // Menampilkan respons ke elemen dengan id "response"
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    // Sembunyikan elemen "loading" jika terjadi kesalahan
+                    $('#loading').hide();
+                    $('#response').show();
+// Tangani kesalahan jika ada
+                    $('#response').html('Terjadi kesalahan: ' + textStatus);
+                }
+            });
+        });
+    });
+    </script>
 
   </body>
 </html>

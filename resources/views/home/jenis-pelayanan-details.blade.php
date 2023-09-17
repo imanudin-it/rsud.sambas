@@ -1,75 +1,63 @@
 @extends('layouts.main')
 
 @section('container')
-<section class="section">
-    <div class="m-0 row">
-        <div class="col-lg-8 p-0 mb-1">
-           <div class="section-header mb-1">
-           
-      <h1> {{ $data->name }} </h1>
-      
-    </div>
-
-    <div class="mb-0 section-body p-1">
-       
-       <article class="shadow article article-style-b">
-                        <div style="max-height: 400px; overflow:hidden;">
-                            <img src="{{ asset('storage/'.$data->image) }}" width="100%" class="p-0">
+<div class="container-xxl flex-grow-1 pt-3">
+  <div class="row">
+    <div class="col-lg-8 col-md-12">
+      <div class="card mb-3">
+        <div class="card-header bg-label-secondary"> 
+          <h3 class="card-title"> 
+           <i class='bx bxs-buildings'></i> {{ $data->name }} 
+          </h3>
+          </div>
+          <div class="card-body pt-2" align="justify">
+              <p class="card-text fw-bold">
+                  <a class="text-white badge bg-info"  href="/jenis-pelayanan/"> Jenis Pelayanan </a>
+            </p>        
+              <div style="max-height: 400px; overflow:hidden;" class="shadow mb-3 rounded">
+                            <img src="{{ asset('storage/'.$data->image) }}" width="100%" class= p-0">
                         </div>
-                        <div class="article-details text-justify">
-                            <p>{!! $data->description !!}</p>
-                        </div>
+                         <p class="card-text pt-3">{!! $data->description !!}</p>
+                        
                         @if($subdata->count())
-                        <div class="card card-info">
-                            <div class="card-header">
-                              <h4><i class="fa fa-bookmark p-1"></i> Fasilitas Terkait :</h4>
-                              <div class="card-header-action">
-                                <a data-collapse="#mycard-collapse" class="btn btn-icon btn-info" href="#"><i class="fas fa-plus"></i> Lihat</a>
-                              </div>
-                            </div>
-                            <div class="collapse" id="mycard-collapse" style="">
-                              <div class="card-body">
-                                
-                                    <ul class="list-unstyled list-unstyled-border"> 
-                                        @foreach ($subdata as $row)
-                                        
-                                        <li class="media">
-                                            <img class="mr-3 rounded" src="{{ asset('storage/'.$row->image) }}" alt="image" width="55">
-                                            <div class="media-body">
-                                                {{-- <div class="float-right text-primary"></div> --}}
-                                                        <div class="media-title"><a href="/jenis-pelayanan/{{ $row->slug }}">{{ $row->name }}</a></div>
-                                                        <span class="text-small text-muted"> {!! $row->descriptions !!}</span>
-                                            </div>
-                                        </li>
-                            
-                                    @endforeach
-                            
-                                    </ul>
-                              </div>
+                          <div class="divider text-start pt-2">
+                            <div class="divider-text">
+                                <h5 class="text-muted fw-bold"> <i class='bx bxs-bookmark bx-tada' ></i> Fasilitas Terkait : </h5>
                             </div>
                           </div>
+                                @foreach ($subdata as $row)
+                                <div class="card mb-2">
+                                  <div class="card-body">
+                                    
+                                     <h6 class="card-title"><i class='bx bxs-message-square-detail'></i> {{ $row->name }} </h6>
+                                      <small class="card-text text-muted"> {!! $row->descriptions !!}</small>
+                                            </div>
+                                    </div>
+                                  {{-- </div>
+                                </div> --}}
+                                    @endforeach
                           @endif
-                    </article>
-                    
-                </div>
-        </div>
-<div class="col-lg-4 p-1">
-    <div class="card card-warning">
-        <div class="card-header shadow mb-1">
-        <h4> <i class="fa fa-list-ol"></i>&nbsp; Jenis Layanan :</h4>
-        </div>
-    <div class="card-body m-0 p-0">
-        <div class="list-group">
-          @foreach ($layanan as $jenis)
-          <a href="/jenis-pelayanan/{{ $jenis->slug }}" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              {{ $jenis->name }}
-            </div>
-          </a> 
-          @endforeach
-          <a href="/jenis-pelayanan/" class="btn btn-block btn-warning"> Lihat Semua </a>
-        </div>
+                    </div>
+                  </div>
     </div>
+<div class="col-lg-4">
+  <div class="divider text-center">
+    <div class="divider-text">
+        <h5 class="text-muted fw-bold"> <i class='bx bxs-buildings bx-tada' ></i> Jenis Pelayanan : </h5>
+    </div>
+  </div>
+    <div class="card p-0">
+        <ul class="list-group">
+          @foreach ($layanan as $jenis)
+          <li class="list-group-item d-flex align-items-center">
+                            <i class="bx bx-buildings me-2"></i><a href="/jenis-pelayanan/{{ $jenis->slug }}">
+              {{ $jenis->name }} </a>
+                            </li>
+          @endforeach
+          <li class="text-white list-group-item d-flex justify-content-between align-items-center bg-secondary"><a href="/jenis-pelayanan/" class="text-white"> <i class='bx bx-grid-small'></i> Lihat Semua Pelayanan </a> </li>
+        </ul>
+    </div>
+    @include('layouts.menu-kanan')
 </div>
     </div>
     </div>

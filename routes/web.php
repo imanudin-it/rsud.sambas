@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\DB_InformasiUmumController;
 use App\Http\Controllers\Dashboard\KataSambutanController;
 use App\Http\Controllers\Dashboard\ProfilRSController;
 use App\Http\Controllers\Dashboard\ServiceDetailsController;
+use App\Http\Controllers\DB_GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Models\User;
 use App\Models\Category;
@@ -26,11 +27,17 @@ use App\Http\Controllers\RegisterController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::fallback(function () {
+    return view('404',[
+        'title' => 'Halaman tidak ditemukan !'
+    ]);
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/jenis-pelayanan', [HomeController::class, 'jenis_pelayanan']);
 Route::get('/jenis-pelayanan/{slug}', [HomeController::class, 'jenis_pelayanan_details']);
 Route::get('/kata-sambutan', [HomeController::class, 'kata_sambutan']);
+Route::get('/jadwal-dokter/{kodePoli}/{tglPeriksa}', [HomeController::class, 'jadwal_dokter'])->middleware('ajax');
 
 Route::get('/posts/', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
@@ -90,5 +97,7 @@ Route::group(['middleware' => ['auth']], function ()
     Route::get('/dashboard/informasi-umum', [DB_InformasiUmumController::class, 'index']);
     Route::post('/dashboard/informasi-umum', [DB_InformasiUmumController::class, 'store']);
     Route::delete('/dashboard/informasi-umum/{id}', [DB_InformasiUmumController::class, 'destroy']);
+    
+    Route::resource('/dashboard/galeri', DB_GalleryController::class);
     
 }); //route middleware auth

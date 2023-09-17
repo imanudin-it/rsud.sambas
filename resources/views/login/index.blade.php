@@ -7,15 +7,15 @@
   <title> RSUD Sambas &mdash; {{ $title }}</title>
 
   <!-- General CSS Files -->
-  <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/admin/modules/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/admin/modules/fontawesome/css/all.min.css') }}">
 
   <!-- CSS Libraries -->
-  <link rel="stylesheet" href="{{ asset('assets/modules/jquery-selectric/selectric.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/admin/modules/jquery-selectric/selectric.css') }}">
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/admin/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/admin/css/components.css') }}">
 <!-- Start GA -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 <script>
@@ -44,7 +44,7 @@ background-repeat: repeat;
                 
               
               <div class="login-brand">
-                <img src="assets/img/rs/rsud-2023.png" alt="logo" width="100" class="mb-3 shadow-light rounded-circle">
+                <img src="{{ asset('assets/admin/img/rs/rsud-2023.png') }}" alt="logo" width="100" class="mb-3 shadow-light rounded-circle">
                 <br>
             <h1> RSUD SAMBAS </h1>
         </div>
@@ -125,23 +125,23 @@ background-repeat: repeat;
   </div>
 
   <!-- General JS Scripts -->
-  <script src="{{ asset('assets/modules/jquery.min.js') }}}"></script>
-  <script src="{{ asset('assets/modules/popper.js') }}}"></script>
-  <script src="{{ asset('assets/modules/tooltip.js') }}}"></script>
-  <script src="{{ asset('assets/modules/bootstrap/js/bootstrap.min.js') }}}"></script>
-  <script src="{{ asset('assets/modules/nicescroll/jquery.nicescroll.min.js') }}}"></script>
-  <script src="{{ asset('assets/modules/moment.min.js') }}}"></script>
-  <script src="{{ asset('assets/js/stisla.js') }}}"></script>
+  <script src="{{ asset('assets/admin/modules/jquery.min.js') }}}"></script>
+  <script src="{{ asset('assets/admin/modules/popper.js') }}}"></script>
+  <script src="{{ asset('assets/admin/modules/tooltip.js') }}}"></script>
+  <script src="{{ asset('assets/admin/modules/bootstrap/js/bootstrap.min.js') }}}"></script>
+  <script src="{{ asset('assets/admin/modules/nicescroll/jquery.nicescroll.min.js') }}}"></script>
+  <script src="{{ asset('assets/admin/modules/moment.min.js') }}}"></script>
+  <script src="{{ asset('assets/admin/js/stisla.js') }}}"></script>
   
   <!-- JS Libraies -->
-  <script src="{{ asset('assets/modules/jquery-pwstrength/jquery.pwstrength.min.js') }}}"></script>
-  <script src="{{ asset('assets/modules/jquery-selectric/jquery.selectric.min.js') }}}"></script>
+  <script src="{{ asset('assets/admin/modules/jquery-pwstrength/jquery.pwstrength.min.js') }}}"></script>
+  <script src="{{ asset('assets/admin/modules/jquery-selectric/jquery.selectric.min.js') }}}"></script>
 
   <!-- Page Specific JS File -->
-  <script src="{{ asset('assets/js/page/auth-register.js') }}}"></script>
+  <script src="{{ asset('assets/admin/js/page/auth-register.js') }}}"></script>
   
   <!-- Template JS File -->
-  <script src="{{ asset('assets/js/scripts.j') }}}s"></script>
-  <script src="{{ asset('assets/js/custom.js') }}}"></script>
+  <script src="{{ asset('assets/admin/js/scripts.j') }}}s"></script>
+  <script src="{{ asset('assets/admin/js/custom.js') }}}"></script>
 </body>
 </html>

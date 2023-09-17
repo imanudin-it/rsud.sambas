@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\InformasiUmum;
 use App\Models\KataSambutan;
+use App\Models\Poliklinik;
 use App\Models\Post;
 use App\Models\ProfilRS;
 use App\Models\Service;
@@ -23,11 +24,15 @@ class HomeController extends Controller
             ->get();
 
         return view('home.home', [
-            "title" => "RSUD Sambas",
+            "title" => "Beranda",
             "latestPost" => $latestPost,
             "nextPost" => $nextPost,
             "layanan" => Service::orderBy('created_at', 'asc')->get(),
-            "katasambutan" => KataSambutan::latest()->first()
+            "katasambutan" => KataSambutan::latest()->first(),
+            // "poly" => Poliklinik::where('kode_bpjs', '!=', '')
+            //         ->where('status','=','0')
+            //         ->whereNotIn('kode',[42,44])
+            //         ->orderby('nama', 'ASC')->get()
         ]);
     }
 
@@ -87,5 +92,11 @@ class HomeController extends Controller
         'posts' => Post::latest()->where('published_at','!=','')->take(8)->get(),
      ];
      return view('home.informasi.umum',$data);
+    }
+
+    public function jadwal_dokter($kodePoli, $tglPeriksa)
+    {
+        $json = file_get_contents("https://antrian.server-rsudsambas.com:8011/?link=bpjs-referensiJadwalDokter&kodepoli=$kodePoli&tanggalperiksa=$tglPeriksa");
+        return $json;
     }
 }
