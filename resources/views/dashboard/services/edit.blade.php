@@ -62,7 +62,7 @@
 </div>
 </section>
 
-<script src="{{ asset('assets/js/web/service-slug.js') }}"></script>
+<script src="{{ asset('assets/admin/js/web/service-slug.js') }}"></script>
 
 
 @endsection

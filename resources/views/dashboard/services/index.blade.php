@@ -157,7 +157,7 @@
 </div>
 </section>
 
-<script src="{{ asset('assets/js/web/service.js') }}"></script>
+<script src="{{ asset('assets/admin/js/web/service.js') }}"></script>
 {{-- 
 
 @endsection

@@ -28,7 +28,7 @@
       </li>
       
       <li class="{{ Request::is('dashboard/categories') ? 'active' : '' }}"><a class="nav-link" href="/dashboard/categories"><i class="fas fa-regular fa-folder fa-sm"></i> <span> Kategori</span></a></li>
-      <li class="{{ Request::is('dashboard/galeri') ? 'active' : '' }}"><a class="nav-link" href="/dashboard/galeri"><i class="fa fa-image fa-sm"></i> Galeri</a></li>
+      <li class="{{ Request::is('dashboard/galeri') ? 'active' : '' }}"><a class="nav-link" href="/dashboard/galeri"><i class="fas fa-image fa-sm"></i><span> Galeri </span> </a></li>
           
       <li class="menu-header">Lain-Lain</li>
       <li class="dropdown {{ Request::is('informasi*') ? 'active' : '' }}">

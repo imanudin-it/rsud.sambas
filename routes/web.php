@@ -7,7 +7,9 @@ use App\Http\Controllers\Dashboard\DB_InformasiUmumController;
 use App\Http\Controllers\Dashboard\KataSambutanController;
 use App\Http\Controllers\Dashboard\ProfilRSController;
 use App\Http\Controllers\Dashboard\ServiceDetailsController;
+use App\Http\Controllers\DB_GaleriFoto;
 use App\Http\Controllers\DB_GalleryController;
+
 use App\Http\Controllers\HomeController;
 use App\Models\User;
 use App\Models\Category;
@@ -99,5 +101,6 @@ Route::group(['middleware' => ['auth']], function ()
     Route::delete('/dashboard/informasi-umum/{id}', [DB_InformasiUmumController::class, 'destroy']);
     
     Route::resource('/dashboard/galeri', DB_GalleryController::class);
+    Route::resource('/dashboard/galeri-foto', DB_GaleriFoto::class);
     
 }); //route middleware auth
