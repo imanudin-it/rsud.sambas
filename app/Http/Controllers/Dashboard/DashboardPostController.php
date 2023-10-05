@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 
 use App\Models\Category;
+use App\Models\Galery;
 use App\Models\Post;
 use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -62,7 +63,8 @@ class DashboardPostController extends Controller
     {
         return view('dashboard.posts.create',[
             'title' => 'New Post',
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'albums' => Galery::latest('created_at')->get()
         ]);
     }
 
@@ -75,6 +77,7 @@ class DashboardPostController extends Controller
             'title' =>  'required|max:255',
             'slug'  =>  'required|unique:posts',
             'category_id'   =>  'required',
+            'galery_id'   =>  '',
             'body'  =>  'required',
             'foto' => 'image|file|max:1024'
         ]);
@@ -111,7 +114,8 @@ class DashboardPostController extends Controller
         return view('dashboard.posts.edit',[
             'title' => 'Edit Post',
             'post' => $post,
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'albums' => Galery::latest('created_at')->get()
         ]);
     }
 

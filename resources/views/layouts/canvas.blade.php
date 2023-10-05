@@ -69,6 +69,15 @@
       </div>
       </div>
       </a>
+      
+      <a href="/tempat-tidur/">
+        <div class="card link bt-primary  mb-3">
+        <div class="card-body">
+        <h5 class="card-title mb-2"><i class='bx bx-info-circle'></i> Ketersediaan Tempat Tidur </h5>
+        <small class="card-text text-muted"><i>Menampilkan list data kamar yang tersedia di RSUD Sambas</i></small>
+      </div>
+      </div>
+      </a>
     </div>
   </div>
   {{-- End Canvas : Info Pelayanan --}}

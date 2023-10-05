@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use App\Models\Category;
+use App\Models\GaleryFoto;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model
 {
@@ -44,6 +45,11 @@ class Post extends Model
     public function incrementReadCount() {
         $this->reads++;
         return $this->save();
+    }
+
+    public function gallery()
+    {
+        return $this->hasMany(GaleryFoto::class, 'galery_id', 'galery_id');
     }
 
 }

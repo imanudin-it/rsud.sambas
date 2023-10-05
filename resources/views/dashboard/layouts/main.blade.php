@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>RSUD Sambas  &mdash; {{ $title }}</title>
 
-  <!-- General CSS Files -->
+  
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
   <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="{{ asset('assets/admin/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/admin/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/admin/modules/jquery-selectric/selectric.css') }}">
-
+ 
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -58,7 +58,15 @@ trix-toolbar [data-trix-button-group="file-tools"] {
 }
 </style>
 <!-- /END GA -->
+<!-- SELECT2  -->
 
+<!-- /END GA -->   
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- General CSS Files -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 
 <body>
@@ -87,7 +95,17 @@ trix-toolbar [data-trix-button-group="file-tools"] {
         </footer>
       </div>
     </div>
-    <script src="{{ asset('assets/admin/modules/jquery.min.js') }}"></script>
+
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script>
+  <script type="text/javascript">
+   
+  $(".select2").select2({
+  width: '100%'
+});
+  
+  </script>
+    {{-- <script src="{{ asset('assets/admin/modules/jquery.min.js') }}"></script> --}}
     <script src="{{ asset('assets/admin/modules/popper.js') }}"></script>
     <script src="{{ asset('assets/admin/modules/tooltip.js') }}"></script>
     <script src="{{ asset('assets/admin/modules/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -109,13 +127,14 @@ trix-toolbar [data-trix-button-group="file-tools"] {
 <script src="{{ asset('assets/admin/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
 <script src="{{ asset('assets/admin/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
 <!-- Page Specific JS File -->
-<script src="{{ asset('assets/admin/js/page/features-post-create.js') }}"></script>
+{{-- <script src="{{ asset('assets/admin/js/page/features-post-create.js') }}"></script> --}}
     <!-- Template JS File -->
     <script src="{{ asset('assets/admin/js/scripts.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/custom.js') }}"></script>
+    {{-- <script src="{{ asset('assets/admin/js/custom.js') }}"></script> --}}
     <script>
       document.addEventListener("trix-file-accept", event => {
   event.preventDefault()
 })
   </script>
+  
 </html>

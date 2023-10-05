@@ -11,8 +11,8 @@ class GaleryFoto extends Model
     protected $table = 'galery_fotos';
     protected $guarded = ['id'];
 
-    // public function galeries()
-    // {
-    //     return $this->belongsTo(Galery::class);
-    // }
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'galery_id');
+    }
 }

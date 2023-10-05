@@ -199,7 +199,7 @@
                 <ul class="list-group list-group-flush"> <small>
                   <li class="fw-bold list-group-item d-flex align-items-center bg-label-primary"> <i class='bx bx-label bx-tada p-2' ></i> Layanan Informasi : </li>
                   <li class="list-group-item d-flex align-items-center"> <i class='bx bxs-user-voice p-2' ></i> <a href="//facebook.com/rssambas"> PKRS Sambas | Facebook </a> </li>
-                  <li class="list-group-item d-flex align-items-center"> <i class='bx bxs-phone-call p-2'></i> +628115620100 </li
+                  <li class="list-group-item d-flex align-items-center"> <i class='bx bxs-phone-call p-2'></i> +628115620100 | Informasi - Pengaduan</li
                   </small>
                 </ul>
               </div>

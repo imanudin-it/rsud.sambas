@@ -67,7 +67,7 @@
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
               <div class="col-sm-12 col-md-9">
-                <select class="form-control selectric @error('category_id') is-invalid @enderror" name="category_id" required>
+                <select class="select2 form-control"  @error('category_id') is-invalid @enderror" name="category_id" required>
                   @foreach ($categories as $category)
                       @if(old('category_id') == $category->id)
                         <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
@@ -95,10 +95,33 @@
               @enderror
             </div>
             </div>
+            
+            <div class="form-group row mb-4">
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Album Photos</label>
+              <div class="col-sm-12 col-md-9">
+                <select class="select2 form-control" @error('publish') is-invalid @enderror" name="galery_id" >
+                  <option value="" selected>Pilih</option>
+                    
+                  @foreach ($albums as $album)
+                  @if(old('galery_id') == $album->id)
+                    <option value="{{ $album->id }}" selected>{{ $album->name }}</option>
+                    @else
+                    <option value="{{ $album->id }}">{{ $album->name }}</option>
+                  @endif
+              @endforeach
+              </select>
+                  @error('galery_id')
+                    <div class="invalid-feedback">
+                      {{  $message }}
+                    </div>
+                  @enderror
+              </div>
+            </div>
+
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
               <div class="col-sm-12 col-md-9">
-                <select class="form-control selectric @error('publish') is-invalid @enderror" name="publish" required>
+                <select class="select2 form-control" @error('publish') is-invalid @enderror" name="publish" required>
                   <option value="1">Publish</option>
                   <option value="2">Draft</option>
                   </select>
@@ -131,6 +154,9 @@
               .then( response => response.json())
               .then( data => slug.value = data.slug)
           })
+
+           
       </script>
+      
 </section>
       @endsection

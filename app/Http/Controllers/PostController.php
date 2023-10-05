@@ -34,7 +34,8 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //$single = Post::find($post->id);
-        $article = $post->load('author', 'category');
+        $article = $post->load('author', 'category', 'gallery');
+
         $relatedArticles = $article->category->posts()->where('category_id', '=', $article->category_id)->latest()->take(5)->get();
         $title = $post->title;
         $categories = Category::all();

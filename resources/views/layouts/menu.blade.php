@@ -24,7 +24,7 @@
              <div class="card-title d-flex align-items-start justify-content-between">
             <span class="avatar-initial rounded bg-label-primary p-3"><i class='bx bx-info-circle'></i></span>
              </div>
-             <span class="fs-85 fw-semibold d-block">Info Pelayanan</span>
+             <span class="fs-85 fw-semibold d-block">Informasi Umum</span>
           </a>
         </div> 
       </div>
