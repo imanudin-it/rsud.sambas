@@ -34,7 +34,7 @@ class DB_GaleriFoto extends Controller
     public function store(Request $request)
     {
                 // Simpan data request ke dalam variabel (sebelum validasi)
-            $requestData = $request->all();
+            dd($requestData = $request->all());
 
             // Menentukan aturan validasi
             $rules = [
