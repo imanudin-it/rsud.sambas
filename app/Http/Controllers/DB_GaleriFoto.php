@@ -17,7 +17,7 @@ class DB_GaleriFoto extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

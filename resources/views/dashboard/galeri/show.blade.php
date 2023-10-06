@@ -70,7 +70,7 @@
  <div class="modal fade" tabindex="-1" role="dialog" id="addCategory">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form action="/dashboard/galeri-foto/" method="POST" enctype="multipart/form-data">
+        <form action="/dashboard/galeri-foto" method="POST" enctype="multipart/form-data">
             @csrf
         <div class="modal-header">
           <h5 class="modal-title">Add New Photos</h5>
