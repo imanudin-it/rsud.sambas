@@ -67,7 +67,7 @@
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
               <div class="col-sm-12 col-md-9">
-                <select class="select2 form-control"  @error('category_id') is-invalid @enderror" name="category_id" required>
+                <select class="form-control selectric"  @error('category_id') is-invalid @enderror" name="category_id" required>
                   @foreach ($categories as $category)
                       @if(old('category_id') == $category->id)
                         <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
@@ -99,7 +99,7 @@
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Album Photos</label>
               <div class="col-sm-12 col-md-9">
-                <select class="select2 form-control" @error('publish') is-invalid @enderror" name="galery_id" >
+                <select class=" selectric form-control" @error('publish') is-invalid @enderror" name="galery_id" >
                   <option value="" selected>Pilih</option>
                     
                   @foreach ($albums as $album)
@@ -121,7 +121,7 @@
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
               <div class="col-sm-12 col-md-9">
-                <select class="select2 form-control" @error('publish') is-invalid @enderror" name="publish" required>
+                <select class=" selectric form-control" @error('publish') is-invalid @enderror" name="publish" required>
                   <option value="1">Publish</option>
                   <option value="2">Draft</option>
                   </select>

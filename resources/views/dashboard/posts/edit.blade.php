@@ -94,7 +94,7 @@
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Album Photos</label>
               <div class="col-sm-12 col-md-9">
-                <select class="select2 form-control"  @error('publish') is-invalid @enderror" name="galery_id" >
+                <select class=" selectric form-control"  @error('publish') is-invalid @enderror" name="galery_id" >
                   <option value="" selected>Pilih</option>
                     
                   @foreach ($albums as $album)
