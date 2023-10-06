@@ -59,7 +59,7 @@ class DB_InformasiUmumController extends Controller
             $info = InformasiUmum::findOrFail($id);
             
             if($info->file){
-                Storage::delete($info->file);
+                Storage::delete('public/'.$info->file);
             }
             
             $info->delete();
