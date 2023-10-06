@@ -35,10 +35,12 @@ class DB_InformasiUmumController extends Controller
 
         // Proses upload file jika ada
         if ($file) {
-            // Lakukan proses upload file disini
-            // Contoh menyimpan file ke direktori public/storage
-            $filename = $file->store('file');
-            $informasiUmum->file = $filename;
+            
+            $file = $request->file;
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $filePath =  $file->storeAs('file', $fileName,'public'); // Store the file in the storage/uploads directory
+                
+            $informasiUmum->file = $filePath;
         }
 
         // Lakukan penyimpanan data ke database
