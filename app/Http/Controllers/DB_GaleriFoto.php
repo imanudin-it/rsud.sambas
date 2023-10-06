@@ -63,10 +63,7 @@ class DB_GaleriFoto extends Controller
 
                 // Membuat direktori galeri jika tidak ada
                 $galeriPath = 'galeri/' . $request->galery_id;
-                if (!Storage::exists($galeriPath)) {
-                    Storage::makeDirectory($galeriPath);
-                }
-    
+                
                 // Simpan gambar ke direktori penyimpanan yang sesuai
                 $path = $file->storeAs(
                     $galeriPath,
