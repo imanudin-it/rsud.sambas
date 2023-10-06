@@ -55,12 +55,18 @@ class DB_InformasiUmumController extends Controller
 
     public function destroy($id)
     {
-        $info = InformasiUmum::findorfail($id);
-        if($info->file){
-            Storage::delete($info->file);
+        try {
+            $info = InformasiUmum::findOrFail($id);
+            
+            if($info->file){
+                Storage::delete($info->file);
+            }
+            
+            $info->delete();
+            
+            return redirect()->route('/dashboard/informasi-umum')->with('success', 'Data deleted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('/dashboard/informasi-umum')->with('error', 'Data not found or could not be deleted.');
         }
-        InformasiUmum::destroy($info->id);
-
-        return redirect('/dashboard/informasi-umum')->with('success', 'Berhasil di hapus !');
     }
 }
