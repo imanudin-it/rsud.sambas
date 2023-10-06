@@ -101,6 +101,7 @@ Route::group(['middleware' => ['auth']], function ()
     Route::delete('/dashboard/informasi-umum/{id}', [DB_InformasiUmumController::class, 'destroy']);
     
     Route::resource('/dashboard/galeri', DB_GalleryController::class);
+    Route::get('/dashboard/galeri-foto', [DB_GaleriFoto::class, 'index']);
     Route::post('/dashboard/galeri-foto', [DB_GaleriFoto::class, 'store']);
     Route::delete('/dashboard/galeri-foto/{id}', [DB_GaleriFoto::class, 'destroy']);
     
