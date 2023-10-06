@@ -59,21 +59,17 @@ class DB_GaleriFoto extends Controller
         foreach ($request->file('foto') as $file) {
             if ($file->isValid()) {
                 $imageName = time() . '_' . $file->getClientOriginalName(); // Generate nama unik untuk gambar
-                $name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-
-                // Membuat direktori galeri jika tidak ada
-                $galeriPath = 'galeri/' . $request->galery_id;
                 
                 // Simpan gambar ke direktori penyimpanan yang sesuai
                 $path = $file->storeAs(
-                    $galeriPath,
+                    'galeri',
                     $imageName,
                     'public' // Atur visibilitas file menjadi public
                 );
     
                 // Simpan data foto ke database
                 $photo = new GaleryFoto();
-                $photo->name = $name;
+                $photo->name = $imageName;
                 $photo->galery_id = $request->galery_id;
                 $photo->image_path = $path; // Gunakan path penyimpanan yang sesuai
                 $photo->save();
