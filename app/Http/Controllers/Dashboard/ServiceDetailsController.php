@@ -39,10 +39,13 @@ class ServiceDetailsController extends Controller
             ]);
         
             if ($request->file('image')) {
-                $validatedData['image'] = $request->file('image')->store('service-images');
+                $file = $request->file('image');
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $filePath =  $file->storeAs('service-images', $fileName,'public'); // Store the file in the storage/uploads directory
+                $validatedData['image'] = $filePath;
             }
         
-            $serviceDetailsDetails = ServiceDetails::create($validatedData);
+           ServiceDetails::create($validatedData);
         
             return redirect()->back()
                 ->with('success', 'New Service Details has been added.');
