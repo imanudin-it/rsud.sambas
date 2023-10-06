@@ -45,7 +45,10 @@ class DashboardServiceController extends Controller
         ]);
 
         if($request->file('image')){
-            $valiasi['image'] = $request->file('image')->store('post-images');
+            $file = $request->file('image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath =  $file->storeAs('service-images', $fileName,'public'); // Store the file in the storage/uploads directory
+            $validasi['image'] = $filePath;
         }
 
        Service::create($valiasi);
@@ -97,7 +100,10 @@ class DashboardServiceController extends Controller
             if($service->image){
                 Storage::delete($service->image);
             }
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $file = $request->file('image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath =  $file->storeAs('service-images', $fileName,'public'); // Store the file in the storage/uploads directory
+            $validatedData['image'] = $filePath;
         }
 
         Service::where('id', $service->id)

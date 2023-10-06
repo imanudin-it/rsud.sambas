@@ -85,7 +85,10 @@ class DashboardPostController extends Controller
             $validatedData['published_at'] = Carbon::now()->toDateTimeString();
         }
         if($request->file('image')){
-            $validatedData['foto'] = $request->file('image')->store('post-images');
+            $file = $request->file('image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath =  $file->storeAs('post-images', $fileName,'public'); // Store the file in the storage/uploads directory
+            $validatedData['foto'] = $filePath;
         }
 
         $validatedData['user_id'] = auth()->user()->id;
@@ -144,7 +147,10 @@ class DashboardPostController extends Controller
             if($post->foto){
                 Storage::delete($post->foto);
             }
-            $validatedData['foto'] = $request->file('image')->store('post-images');
+            $file = $request->file('image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath =  $file->storeAs('post-images', $fileName,'public'); // Store the file in the storage/uploads directory
+            $validatedData['foto'] = $filePath;
         }
 
         $validatedData['user_id'] = auth()->user()->id;

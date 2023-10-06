@@ -40,7 +40,10 @@ class KataSambutanController extends Controller
             if($kataSambutan->image){
                 Storage::delete($kataSambutan->image);
             }
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $file = $request->file('image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath =  $file->storeAs('post-images', $fileName,'public'); // Store the file in the storage/uploads directory
+            $validatedData['image'] = $filePath;
         }
 
         kataSambutan::where('id', $kataSambutan->id)

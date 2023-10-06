@@ -127,7 +127,7 @@ trix-toolbar [data-trix-button-group="file-tools"] {
 <script src="{{ asset('assets/admin/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
 <script src="{{ asset('assets/admin/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
 <!-- Page Specific JS File -->
-{{-- <script src="{{ asset('assets/admin/js/page/features-post-create.js') }}"></script> --}}
+<script src="{{ asset('assets/admin/js/page/features-post-create.js') }}"></script>
     <!-- Template JS File -->
     <script src="{{ asset('assets/admin/js/scripts.js') }}"></script>
     {{-- <script src="{{ asset('assets/admin/js/custom.js') }}"></script> --}}

@@ -60,7 +60,10 @@ class ProfilRSController extends Controller
                     if($profil->struktur){
                         Storage::delete($profil->struktur);
                     }
-                    $validatedData['struktur'] = $request->file('struktur')->store('struktur-images');
+                    $file = $request->file('struktur');
+                    $fileName = time() . '_' . $file->getClientOriginalName();
+                    $filePath =  $file->storeAs('struktur-images', $fileName,'public'); // Store the file in the storage/uploads directory
+                    $validatedData['struktur'] = $filePath;
                 }
                 break;
             
@@ -75,7 +78,10 @@ class ProfilRSController extends Controller
                     if($profil->image){
                         Storage::delete($profil->image);
                     }
-                    $validatedData['image'] = $request->file('image')->store('profil-images');
+                    $file = $request->file('image');
+                    $fileName = time() . '_' . $file->getClientOriginalName();
+                    $filePath =  $file->storeAs('profil-images', $fileName,'public'); // Store the file in the storage/uploads directory
+                    $validatedData['image'] = $filePath;
                 }
                 break;
        }

@@ -94,33 +94,7 @@ class DB_GaleriFoto extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(GaleryFoto $galeryFoto)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(GaleryFoto $galeryFoto)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, GaleryFoto $galeryFoto)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
+   
     public function destroy(Request $request, $id)
     {
         // Temukan entri foto berdasarkan ID
