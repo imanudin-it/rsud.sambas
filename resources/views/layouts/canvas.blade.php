@@ -55,7 +55,7 @@
       <div class="offcanvas-body my-auto mx-0 flex-grow-0">
         <h6> PENDAFTARAN ONLINE RAWAT JALAN </h6>
         <hr class="text-muted">
-        <p> Silahkan pilih Jenis Pendaftaran Online yang kami sediakan : </
+        <p> Silahkan pilih Jenis Pendaftaran Online yang kami sediakan : </p>
           <div class="row">
             <div class="col-lg-4">
               <div class="card bg-success">
@@ -75,8 +75,9 @@
               <div class="card bg-success">
                 <div class="card-header"> Mobile JKN </div>
                 <div class="card-body"><a href="https://play.google.com/store/apps/details?id=app.bpjs.mobile"><img src="{{ asset('assets/img/daftar-online/via-jkn.jpg') }}"></a></div> 
-                </ </div>
+                 </div>
             </div>
+          </div>
       </div>
     </div>
     {{-- End Canvas Daftar Online --}}
