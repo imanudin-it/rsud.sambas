@@ -196,12 +196,14 @@
             <div class="col-md-4 col-lg-4">
               <div class="bg-label-secondary  p-3 mb-0">
                 <h3 class="card-title fw-bold mb-4 pt-3"> RSUD SAMBAS </h3>
-                <ul class="list-group list-group-flush"> <small>
+                <a href='http://www.freevisitorcounters.com'>on Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=790d6bc9688e0acb23161cadfb3f636e57f0bac5'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1089547/t/0"></script> 
+                {{-- <ul class="list-group list-group-flush"> <small>
                   <li class="fw-bold list-group-item d-flex align-items-center bg-label-primary"> <i class='bx bx-label bx-tada p-2' ></i> Layanan Informasi : </li>
                   <li class="list-group-item d-flex align-items-center"> <i class='bx bxs-user-voice p-2' ></i> <a href="//facebook.com/rssambas"> PKRS Sambas | Facebook </a> </li>
                   <li class="list-group-item d-flex align-items-center"> <i class='bx bxs-phone-call p-2'></i> +628115620100 | Informasi - Pengaduan</li
                   </small>
-                </ul>
+                </ul> --}}
               </div>
             </div>
         </div>
@@ -253,9 +255,9 @@
         </div>
       </div> --}}
       
-      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+      {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
       <div class="elfsight-app-afc0c044-9e2d-4816-8236-d058f301e739 mx-auto text-center pt-2 mb-3" style="width:100%"></div>
-                  
+                   --}}
 <script src="{{ asset('assets/owlcarousel/vendors/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/owlcarousel/owlcarousel/owl.carousel.min.js') }}"></script>
 

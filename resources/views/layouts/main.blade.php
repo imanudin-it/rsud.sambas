@@ -217,26 +217,29 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
 <img src="{{ asset('storage/footer.jpg') }}" width="100%">
 <footer class="footer text-muted bg-dark p-0 mb-0">
   {{-- <img src="{{ asset('storage/footer3.jpg') }}" width="100%"> --}}
-    <div>
-      <a href='http://www.freevisitorcounters.com'>on Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=790d6bc9688e0acb23161cadfb3f636e57f0bac5'></script>
-      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1089547/t/0"></script> <hr>
+    <div
+      class="container-fluid d-flex flex-md-row flex-column justify-content-between align-items-md-center gap-1 container-p-x py-3"
+    >
+    
+      <div>
+        
         <h2
           class="footer-text text-muted fw-bolder mb-1"
           >RSUD SAMBAS</h2
-        > <br> <small> &copy; {{ date('Y') }} &bull; PKRS &bull; TIM IT </small>
+        > <br> <small> &copy; {{ date('Y') }} &trade; </small>
       </div>
       <div>
-        <div class="dropdown dropup footer-link me-3 text-center">
-          
+        <div class="dropdown dropup footer-link me-3">
           <a
-            href="https://facebook.com/imanudin.it" class="text-muted"
+            href="https://facebook.com/imanudin.it"
           >
-          <i class='bx bx-terminal'></i> IMANUDIN - SIMRS - PKRS  </a>
+          <i class='bx bx-terminal'></i> IMANUDIN - SIMRS - PKRS </a>
         </a>
           
         </div>
         
       </div>
+    </div>
   </footer>
 <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
