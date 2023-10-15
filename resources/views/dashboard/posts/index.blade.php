@@ -39,9 +39,9 @@
               </ul>
             </div>
             <div class="float-right p-2">
-              <form>
+              <form action="">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search">
+                  <input type="text" name="cari" class="form-control" placeholder="Search">
                   <div class="input-group-append">                                            
                     <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                   </div>

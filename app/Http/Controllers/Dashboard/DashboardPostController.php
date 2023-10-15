@@ -20,7 +20,6 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        $title = 'Posts';
         if (Gate::allows('admin')) // jika Admin
         {
             $post = Post::latest()->where('published_at', '!=', null);
@@ -31,6 +30,11 @@ class DashboardPostController extends Controller
             $post = 0; // Atur default draft ke 0 jika bukan Admin atau Member
         }
         
+        if(request('cari')){
+            $post->where('title','like', '%'.request('search').'%')
+            ->orWhere('body','like', '%'.request('search').'%')->latest('published_at');
+        }
+
         return view('dashboard.posts.index',[
             'title' => 'Posts',
             'posts' => $post->paginate(10)
