@@ -19,7 +19,7 @@ class HomeController extends Controller
         $nextPost = Post::where('created_at', '<', $latestPost->created_at)
             ->where('published_at','!=','')
             ->latest('created_at')
-            ->skip(1) // Ganti nilai ini dengan 1 jika Anda ingin mendapatkan post berikutnya
+            ->skip(0) // Ganti nilai ini dengan 1 jika Anda ingin mendapatkan post berikutnya
             ->take(5)
             ->get();
 

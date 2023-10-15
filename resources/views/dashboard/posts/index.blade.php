@@ -67,7 +67,7 @@
           @foreach ( $posts as $post)
               <tr>
                 <td> {{  $loop->iteration }} </td>
-                <td> <a href="/dashboard/posts/{{ $post->slug }}">{{  $post->title }}</a></td>
+                <td> <a href="/posts/{{ $post->slug }}">{{  $post->title }}</a></td>
                 <td> {{  $post->category->name }}</td>
                 <td> {{  date('d-m-Y', strtotime($post->created_at)) }}</td>
                 <td class="text-center"> @if(!empty($post->published_at)) <div class="badge badge-success">Published</div>  @else <div class="badge badge-warning"> Draft </div> @endif </td>
