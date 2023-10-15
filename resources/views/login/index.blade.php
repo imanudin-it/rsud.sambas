@@ -110,9 +110,9 @@ background-repeat: repeat;
 
               </div>
               
-              <div class="card-footer bg-light" align="center">
+              {{-- <div class="card-footer bg-light" align="center">
                 Belum punya akun ? <a href="/register">Silahkan Daftar</a> </div>
-            </div>
+            </div> --}}
             </div>
             
           </div>
