@@ -44,7 +44,7 @@
       aria-labelledby="offcanvasStartLabel"
     >
       <div class="offcanvas-header">
-        <h5 id="offcanvasStartLabel" class="offcanvas-title"><i class='bx bxs-user-account bx-flip-horizontal bx-tada' ></i> Profil</h5>
+        <h5 id="offcanvasStartLabel" class="offcanvas-title"><i class='bx bxs-user-account bx-flip-horizontal bx-tada' ></i> PENDAFTARAN ONLINE RAWAT JALAN </h5>
         <button
           type="button"
           class="btn-close text-reset"
@@ -53,22 +53,24 @@
         ></button>
       </div>
       <div class="offcanvas-body my-auto mx-0 flex-grow-0">
-        <h6> PENDAFTARAN ONLINE RAWAT JALAN </h6>
         <hr class="text-muted">
         <p> Silahkan pilih Jenis Pendaftaran Online yang kami sediakan : </p>
-           <div class="card mb-3">
-                <div class="card-header"> Melalui WhatsApp </div>
+        <a href="https://api.whatsapp.com/send?phone=6282154827357&text=Saya%20ingin%20mendaftar%20online">
+          <div class="card mb-3">
                 <div class="card-body text-center"><a href="https://api.whatsapp.com/send?phone=6282154827357&text=Saya%20ingin%20mendaftar%20online"><img src="{{ asset('assets/img/daftar-online/via-wa.jpg') }}" width="150"></a></div> 
               </div>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.rsudsambas.co.id">
              <div class="card mb-3">
-                <div class="card-header"> Aplikasi RSUD Sambas</div>
                 <div class="card-body text-center"><a href="https://play.google.com/store/apps/details?id=com.rsudsambas.co.id"><img src="{{ asset('assets/img/daftar-online/via-rsud.jpg') }}" width="150"></a></div> 
               </div>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=app.bpjs.mobile">
               <div class="card mb-3">
-                <div class="card-header"> Mobile JKN </div>
                 <div class="card-body text-center"><a href="https://play.google.com/store/apps/details?id=app.bpjs.mobile"><img src="{{ asset('assets/img/daftar-online/via-jkn.jpg') }}" width="150"></a>
                 </div> 
             </div>
+        </a>
       </div>
     </div>
     {{-- End Canvas Daftar Online --}}
