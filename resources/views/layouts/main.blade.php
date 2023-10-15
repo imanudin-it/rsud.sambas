@@ -229,11 +229,11 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
         > <br> <small> &copy; {{ date('Y') }} &bull; PKRS &bull; TIM IT </small>
       </div>
       <div>
-        <div class="dropdown dropup footer-link me-3">
+        <div class="dropdown dropup footer-link me-3 text-center">
            <a href='http://www.freevisitorcounters.com'></a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=790d6bc9688e0acb23161cadfb3f636e57f0bac5'></script>
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1089547/t/0"></script> <br>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1089547/t/0"></script> <br><br>
           <a
-            href="https://facebook.com/imanudin.it"
+            href="https://facebook.com/imanudin.it" class="text-muted"
           >
           <i class='bx bx-terminal'></i> IMANUDIN - SIMRS - PKRS  </a>
         </a>
