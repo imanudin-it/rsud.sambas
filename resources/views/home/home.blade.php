@@ -187,7 +187,7 @@
   </div>
 </div>
 
-        <div class="row bg-label secondary">
+        <div class="row bg-label secondary mb-3">
           <div class="col-lg-8 col-md-8">
             <div class="bg-secondary p-1 mb-0">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6820939307827!2d109.30326485575445!3d1.3674259505641846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e4b95de561a647%3A0xdb34ccf6e0859b60!2sRSUD%20Sambas!5e0!3m2!1sid!2sid!4v1674203527527!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="250"></iframe>
@@ -196,7 +196,8 @@
             <div class="col-md-4 col-lg-4">
               <div class="bg-label-secondary  p-3 mb-0">
                 <h3 class="card-title fw-bold mb-4 pt-3"> RSUD SAMBAS </h3>
-                <a href='http://www.freevisitorcounters.com'>on Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=790d6bc9688e0acb23161cadfb3f636e57f0bac5'></script>
+                <img src="{{ asset('assets/img/fb.png') }}" width="50" style="float: left;">
+                <img src="{{ asset('assets/img/ig.webp') }}" width="50" style="float: left;"> <a href='http://www.freevisitorcounters.com'>on Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=790d6bc9688e0acb23161cadfb3f636e57f0bac5'></script>
       <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1089547/t/0"></script> 
                 {{-- <ul class="list-group list-group-flush"> <small>
                   <li class="fw-bold list-group-item d-flex align-items-center bg-label-primary"> <i class='bx bx-label bx-tada p-2' ></i> Layanan Informasi : </li>
