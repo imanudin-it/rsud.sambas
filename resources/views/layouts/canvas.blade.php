@@ -36,6 +36,53 @@
   </div>
   {{-- End Canvas Profile --}}
 
+ {{-- Canvas Daftar Online --}}
+      <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="daftarOnline"
+      aria-labelledby="offcanvasStartLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 id="offcanvasStartLabel" class="offcanvas-title"><i class='bx bxs-user-account bx-flip-horizontal bx-tada' ></i> Profil</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body my-auto mx-0 flex-grow-0">
+        <h6> PENDAFTARAN ONLINE RAWAT JALAN </h6>
+        <hr class="text-muted">
+        <p> Silahkan pilih Jenis Pendaftaran Online yang kami sediakan : </
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card bg-success">
+                <div class="card-header"> Melalui WhatsApp </div>
+                <div class="card-body"><a href="https://api.whatsapp.com/send?phone=6282154827357&text=Saya%20ingin%20mendaftar%20online"><img src="{{ asset('assets/img/daftar-online/via-wa.jpg') }}"></a></div> 
+              </div>
+            </div>
+            
+            <div class="col-lg-4">
+              <div class="card bg-success">
+                <div class="card-header"> Aplikasi RSUD Sambas</div>
+                <div class="card-body"><a href="https://play.google.com/store/apps/details?id=com.rsudsambas.co.id"><img src="{{ asset('assets/img/daftar-online/via-rsud.jpg') }}"></a></div> 
+              </div>
+            </div>
+            
+            <div class="col-lg-4">
+              <div class="card bg-success">
+                <div class="card-header"> Mobile JKN </div>
+                <div class="card-body"><a href="https://play.google.com/store/apps/details?id=app.bpjs.mobile"><img src="{{ asset('assets/img/daftar-online/via-jkn.jpg') }}"></a></div> 
+                </ </div>
+            </div>
+      </div>
+    </div>
+    {{-- End Canvas Daftar Online --}}
+
+    
+
 {{-- Canvas Info Pelayanan --}}
 <div
     class="offcanvas offcanvas-start"
