@@ -230,6 +230,8 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
       </div>
       <div>
         <div class="dropdown dropup footer-link me-3">
+          <a href='https://web.rsudsambas.co.id/'></a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=790d6bc9688e0acb23161cadfb3f636e57f0bac5'></script>
+          <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1089547/t/0"></script>
           <a
             href="https://facebook.com/imanudin.it"
           >
