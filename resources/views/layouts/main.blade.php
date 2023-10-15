@@ -231,7 +231,7 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
       <div>
         <div class="dropdown dropup footer-link me-3">
           <a
-            href="https://facebook.com/imanudin.it"
+            href="https://facebook.com/imanudin.it" class="text-muted"
           >
           <i class='bx bx-terminal'></i> IMANUDIN - SIMRS - PKRS </a>
         </a>
