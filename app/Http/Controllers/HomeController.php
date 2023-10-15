@@ -19,7 +19,7 @@ class HomeController extends Controller
         $nextPost = Post::where('published_at','!=','')
             ->latest('published_at')
             ->skip(1) // Ganti nilai ini dengan 1 jika Anda ingin mendapatkan post berikutnya
-            ->take(5)
+            ->take(4)
             ->get();
 
         return view('home.home', [
