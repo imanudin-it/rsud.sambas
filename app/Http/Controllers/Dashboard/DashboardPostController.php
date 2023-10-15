@@ -131,7 +131,8 @@ class DashboardPostController extends Controller
             'title' =>  'required|max:255',
             'category_id'   =>  'required',
             'body'  =>  'required',
-            'foto' => 'image|file|max:1024'
+            'foto' => 'image|file|max:1024',
+            'galery_id' => ''
         ];
        
         if($request->slug != $post->slug){
