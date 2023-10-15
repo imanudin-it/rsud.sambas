@@ -31,8 +31,8 @@ class DashboardPostController extends Controller
         }
         
         if(request('cari')){
-            $post->where('title','like', '%'.request('search').'%')
-            ->orWhere('body','like', '%'.request('search').'%')->latest('published_at');
+            $post->where('title','like', '%'.request('cari').'%')
+            ->orWhere('body','like', '%'.request('cari').'%')->latest('published_at');
         }
 
         return view('dashboard.posts.index',[
