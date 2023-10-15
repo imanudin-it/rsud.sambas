@@ -49,7 +49,7 @@
     <div class="col-6 col-md-6 col-lg-6">
       <div class="shadow card mb-3 link">
           <div class="card-body">
-            <a href="#" onclick="swal('Fitur ini akan segera hadir !')">
+            <a href="#" onclick="alert('Fitur ini akan segera hadir !')">
                <div class="card-title d-flex align-items-start justify-content-between">
               <span class="avatar-initial rounded bg-label-warning p-3"><i class='bx bx-photo-album'></i></span>
                </div>

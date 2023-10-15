@@ -56,17 +56,17 @@
         <h6> PENDAFTARAN ONLINE RAWAT JALAN </h6>
         <hr class="text-muted">
         <p> Silahkan pilih Jenis Pendaftaran Online yang kami sediakan : </p>
-           <div class="card bg-success">
+           <div class="card mb-3">
                 <div class="card-header"> Melalui WhatsApp </div>
-                <div class="card-body"><a href="https://api.whatsapp.com/send?phone=6282154827357&text=Saya%20ingin%20mendaftar%20online"><img src="{{ asset('assets/img/daftar-online/via-wa.jpg') }}" width="100"></a></div> 
+                <div class="card-body text-center"><a href="https://api.whatsapp.com/send?phone=6282154827357&text=Saya%20ingin%20mendaftar%20online"><img src="{{ asset('assets/img/daftar-online/via-wa.jpg') }}" width="150"></a></div> 
               </div>
-             <div class="card bg-info">
+             <div class="card mb-3">
                 <div class="card-header"> Aplikasi RSUD Sambas</div>
-                <div class="card-body"><a href="https://play.google.com/store/apps/details?id=com.rsudsambas.co.id"><img src="{{ asset('assets/img/daftar-online/via-rsud.jpg') }}" width="100"></a></div> 
+                <div class="card-body text-center"><a href="https://play.google.com/store/apps/details?id=com.rsudsambas.co.id"><img src="{{ asset('assets/img/daftar-online/via-rsud.jpg') }}" width="150"></a></div> 
               </div>
-              <div class="card bg-warning">
+              <div class="card mb-3">
                 <div class="card-header"> Mobile JKN </div>
-                <div class="card-body"><a href="https://play.google.com/store/apps/details?id=app.bpjs.mobile"><img src="{{ asset('assets/img/daftar-online/via-jkn.jpg') }}" width="100"></a>
+                <div class="card-body text-center"><a href="https://play.google.com/store/apps/details?id=app.bpjs.mobile"><img src="{{ asset('assets/img/daftar-online/via-jkn.jpg') }}" width="150"></a>
                 </div> 
             </div>
       </div>
