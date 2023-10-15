@@ -16,10 +16,9 @@ class HomeController extends Controller
     public function index()
     {
         $latestPost = Post::latest('published_at')->where('published_at','!=','')->first();
-        $nextPost = Post::where('created_at', '<', $latestPost->created_at)
-            ->where('published_at','!=','')
+        $nextPost = Post::where('published_at','!=','')
             ->latest('published_at')
-            ->skip(0) // Ganti nilai ini dengan 1 jika Anda ingin mendapatkan post berikutnya
+            ->skip(1) // Ganti nilai ini dengan 1 jika Anda ingin mendapatkan post berikutnya
             ->take(5)
             ->get();
 
