@@ -57,7 +57,7 @@
         <p> Silahkan pilih Jenis Pendaftaran Online yang kami sediakan : </p>
         <a href="https://api.whatsapp.com/send?phone=6282154827357&text=Saya%20ingin%20mendaftar%20online">
           <div class="card mb-3">
-                <div class="card-body text-center"><a href="https://api.whatsapp.com/send?phone=6282154827357&text=Saya%20ingin%20mendaftar%20online"><img src="{{ asset('assets/img/daftar-online/via-wa.jpg') }}" width="250"></a></div> 
+                <div class="card-body text-center"><a href="https://api.whatsapp.com/send?phone=6282154827357&text=Saya%20ingin%20mendaftar%20online"><img src="{{ asset('assets/img/daftar-online/via-wa2.jpg') }}" width="250"></a></div> 
               </div>
         </a>
         <a href="https://play.google.com/store/apps/details?id=com.rsudsambas.co.id">
