@@ -200,14 +200,13 @@
                 <a href="https://instagram.com/rsudsambasofficial"><img src="{{ asset('assets/img/ig.webp') }}" width="50" style="padding:10px;"> </a>
                 <a href="https://www.youtube.com/@rsudsambas6284"><img src="{{ asset('assets/img/yt.png') }}" width="50" style="padding:10px;"> </a>
                 
-                <br> <a href='http://www.freevisitorcounters.com'>on Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=790d6bc9688e0acb23161cadfb3f636e57f0bac5'></script>
-      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1089547/t/0"></script> 
-                {{-- <ul class="list-group list-group-flush"> <small>
+                {{-- <br> <a href='http://www.freevisitorcounters.com'>on Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=790d6bc9688e0acb23161cadfb3f636e57f0bac5'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1089547/t/0"></script>  --}}
+                <ul class="list-group list-group-flush"> <small>
                   <li class="fw-bold list-group-item d-flex align-items-center bg-label-primary"> <i class='bx bx-label bx-tada p-2' ></i> Layanan Informasi : </li>
-                  <li class="list-group-item d-flex align-items-center"> <i class='bx bxs-user-voice p-2' ></i> <a href="//facebook.com/rssambas"> PKRS Sambas | Facebook </a> </li>
                   <li class="list-group-item d-flex align-items-center"> <i class='bx bxs-phone-call p-2'></i> +628115620100 | Informasi - Pengaduan</li
                   </small>
-                </ul> --}}
+                </ul>
               </div>
             </div>
         </div>
