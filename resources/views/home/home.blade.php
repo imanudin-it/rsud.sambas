@@ -195,7 +195,7 @@
             </div>
             <div class="col-md-4 col-lg-4">
               <div class="bg-label-secondary  p-3 mb-0" align="center">
-                <h3 class="card-title fw-bold mb-4 pt-3"> RSUD SAMBAS </h3>
+                <h3 class="card-title fw-bold mb-2 pt-3"> RSUD SAMBAS </h3>
                 <a href="https://facebook.com/rssambas"><img src="{{ asset('assets/img/fb.png') }}" width="50" style="padding:10px;"></a>
                 <a href="https://instagram.com/rsudsambasofficial"><img src="{{ asset('assets/img/ig.webp') }}" width="50" style="padding:10px;"> </a>
                 <a href="https://www.youtube.com/@rsudsambas6284"><img src="{{ asset('assets/img/yt.png') }}" width="50" style="padding:10px;"> </a>
