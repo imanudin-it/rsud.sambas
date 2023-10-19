@@ -214,7 +214,7 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
             
 </body>
 
-<img src="{{ asset('storage/footer.jpg') }}" width="100%">
+<img src="{{ asset('assets/img/footer-1.jpg') }}" width="100%">
 <footer class="footer text-muted bg-dark p-0 mb-0">
   {{-- <img src="{{ asset('storage/footer3.jpg') }}" width="100%"> --}}
     <div

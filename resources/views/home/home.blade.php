@@ -169,7 +169,7 @@
         <div class="owl-item">
           <div class="card">
               <div class="text-center text-muted p-3 fw-bold card-title bg-label-success mb-1"><a href="/jenis-pelayanan/{{ $pelayanan->slug }}">{{ $pelayanan->name }}</a></div>
-            <div class="card-body pt-0" style="max-height: 200px; overflow: hidden;">
+            <div class="card-body p-0" style="max-height: 200px; overflow: hidden;">
              <img alt="image" src="{{ asset('/storage/'.$pelayanan->image) }}" width="100%" height="190">
           </div>
           </div>
