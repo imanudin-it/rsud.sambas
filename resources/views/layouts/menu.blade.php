@@ -64,7 +64,7 @@
       <div class="shadow card mb-4">
         <div class="card-body p-0">
           <a href="#"data-bs-toggle="offcanvas" data-bs-target="#daftarOnline" aria-controls="offcanvasStart">
-              <img src="{{ asset('assets/img/daftar-online/daftar-online4.jpg') }}" class="img-100 rounded" loading="lazy">
+              <img src="{{ asset('assets/img/daftar-online/daftar-online4.webp') }}" class="img-100 rounded" loading="lazy">
           </a>
         </div> 
       </div>
