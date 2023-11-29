@@ -203,10 +203,10 @@
                 
                 {{-- <br> <a href='http://www.freevisitorcounters.com'>on Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=790d6bc9688e0acb23161cadfb3f636e57f0bac5'></script>
       <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1089547/t/0"></script>  --}}
-          <br>
+          <hr>
             <div class="row p-0 m-0">
               <div class="col-md-8">          
-                <ul class="list-group list-group-flush">
+                <ul class="card list-group list-group-flush">
                   <li class="fw-bold list-group-item d-flex align-items-center bg-label-primary"><small> <i class='bx bx-label bx-tada p-2' ></i> Layanan Informasi : </small> </li>
                   <li class="list-group-item d-flex align-items-center"><small> <i class='bx bxs-phone-call p-2'></i> +628115620100 | Informasi - Pengaduan </small></li
                   
