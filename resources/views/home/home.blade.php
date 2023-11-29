@@ -195,7 +195,7 @@
             </div>
             <div class="col-md-4 col-lg-4">
               
-              <div class="bg-label-secondary  p-3 mb-0" align="center">
+              <div class="bg-label-secondary mb-0" align="center">
                 <div class="row">
                   <div class="col-md-6">
                 <h3 class="card-title fw-bold mb-2 pt-3"> RSUD SAMBAS </h3>
