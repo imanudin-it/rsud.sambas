@@ -6,7 +6,7 @@
 <style>
 
   .bg-header{
-    background-image: url('{{ asset('storage/header-rsud.jpg') }}');
+    background-image: url('{{ asset('storage/header-rsud.webp') }}');
     background-size: cover;
     background-repeat: no-repeat;
     border-top : solid 3px #3c598c;
@@ -194,7 +194,10 @@
             </div>
             </div>
             <div class="col-md-4 col-lg-4">
+              
               <div class="bg-label-secondary  p-3 mb-0" align="center">
+                <div class="row">
+                  <div class="col-md-6">
                 <h3 class="card-title fw-bold mb-2 pt-3"> RSUD SAMBAS </h3>
                 <a href="https://facebook.com/rssambas"><img src="{{ asset('assets/img/fb.png') }}" width="50" style="padding:10px;"></a>
                 <a href="https://instagram.com/rsudsambasofficial"><img src="{{ asset('assets/img/ig.webp') }}" width="50" style="padding:10px;"> </a>
@@ -208,7 +211,12 @@
                   </small>
                 </ul>
               </div>
+                <div class="col-md-6">
+                  <a href='http://www.freevisitorcounters.com'>click here</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=1890c7cefd03d05f1fb238aa80b0b41b60521f3d'></script>
+                  <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1108646/t/0"></script>
+                </div>
             </div>
+              </div>
         </div>
         
       {{-- <div class="card p-2 mb-4">
