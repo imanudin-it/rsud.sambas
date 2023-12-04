@@ -119,7 +119,9 @@
           <div align="right" class="pt-2 mb-4"> <a href="/posts" class="btn btn-primary btn-sm"> Lihat Semua &raquo; </a> </div>
         
           @include('layouts.kategori')
-        
+        <hr>
+        <a href='http://www.freevisitorcounters.com'>click here</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=1890c7cefd03d05f1fb238aa80b0b41b60521f3d'></script>
+                <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1108646/t/0"></script>
         </div>
       </div>
 </div>
