@@ -98,4 +98,14 @@ class HomeController extends Controller
         $json = file_get_contents("https://antrian.server-rsudsambas.com:8011/?link=bpjs-referensiJadwalDokter&kodepoli=$kodePoli&tanggalperiksa=$tglPeriksa");
         return $json;
     }
+
+    public function list_kamar()
+    {
+        $json = file_get_contents("http://36.91.145.69/bridging/applicares/?link=list-kamar");
+        $data = [
+            'title' => 'Ketersediaan Tempat Tidur',
+            'data' => $json,
+         ];
+         return view('home.informasi.tempat_tidur',$data);
+    }
 }
