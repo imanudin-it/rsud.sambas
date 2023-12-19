@@ -101,10 +101,10 @@ class HomeController extends Controller
 
     public function list_kamar()
     {
-        $json = file_get_contents("http://36.91.145.69/bridging/applicares/?link=list-kamar");
+        $json = json_decode(file_get_contents("http://36.91.145.69/bridging/applicares/?link=list-kamar"));
         $data = [
             'title' => 'Ketersediaan Tempat Tidur',
-            'data' => $json,
+            'data' => $json->response->list,
          ];
          return view('home.informasi.tempat_tidur',$data);
     }

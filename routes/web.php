@@ -35,7 +35,7 @@ Route::fallback(function () {
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/list_kamar', [HomeController::class, 'list_kamar']);
+Route::get('/tempat-tidur', [HomeController::class, 'list_kamar']);
 Route::get('/jenis-pelayanan', [HomeController::class, 'jenis_pelayanan']);
 Route::get('/jenis-pelayanan/{slug}', [HomeController::class, 'jenis_pelayanan_details']);
 Route::get('/kata-sambutan', [HomeController::class, 'kata_sambutan']);
