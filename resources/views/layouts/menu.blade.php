@@ -49,7 +49,7 @@
     <div class="col-6 col-md-3 col-lg-3">
       <div class="shadow bl-primary card mb-3 link">
         <div class="card-body">
-          <a href="#" onclick="alert('Fitur ini akan segera hadir !')">
+          <a href="//rsudsambas.co.id/gallery">
              <div class="card-title d-flex align-items-start justify-content-between">
             <span class="avatar-initial rounded bg-label-warning p-3"><i class='bx bx-photo-album'></i></span>
              </div>
