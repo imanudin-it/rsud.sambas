@@ -130,41 +130,44 @@ class DashboardPostController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Post $post)
-    {
-        $rules = [
-            'title' =>  'required|max:255',
-            'category_id'   =>  'required',
-            'body'  =>  'required',
-            'foto' => 'image|mimes:jpeg,png,jpg,gif|max:1024',
-            'galery_id' => ''
-        ];
-       
-        if($request->slug != $post->slug){
-            $rules['slug']  =  'required|unique:posts';
-        }
-        $validatedData = $request->validate($rules);
-        
-        if($request->publish == '1'){
-            $validatedData['published_at'] = Carbon::now()->toDateTimeString();
-        }else {  $validatedData['published_at'] = null; }
-
-        if ($request->file('image') && $request->file('image')->isValid()) {
-            if($post->foto){
-                Storage::delete($post->foto);
-            }
-            $file = $request->file('image');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $filePath =  $file->storeAs('post-images', $fileName,'public'); // Store the file in the storage/uploads directory
-            $validatedData['foto'] = $filePath;
-        }
-
-        $validatedData['user_id'] = auth()->user()->id;
-        
-        POST::where('id', $post->id)
-            ->update($validatedData);
-
-        return redirect('/dashboard/posts')->with('success', 'Post has been Updated !');
+{
+    $rules = [
+        'title' => 'required|max:255',
+        'category_id' => 'required',
+        'body' => 'required',
+        'image' => 'image|mimes:jpeg,png,jpg,gif|max:1024', // Sesuaikan dengan nama field di request
+        'galery_id' => ''
+    ];
+   
+    if($request->slug != $post->slug){
+        $rules['slug']  =  'required|unique:posts';
     }
+    
+    $validatedData = $request->validate($rules);
+    
+    if ($request->publish == '1') {
+        $validatedData['published_at'] = Carbon::now()->toDateTimeString();
+    } else {
+        $validatedData['published_at'] = null;
+    }
+
+    if ($request->file('image') && $request->file('image')->isValid()) {
+        if ($post->foto) {
+            Storage::delete($post->foto);
+        }
+        $file = $request->file('image');
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $filePath =  $file->storeAs('post-images', $fileName, 'public');
+        $validatedData['foto'] = $filePath; // Sesuaikan dengan nama field di tabel posts
+    }
+
+    $validatedData['user_id'] = auth()->user()->id;
+    
+    Post::where('id', $post->id)
+        ->update($validatedData);
+
+    return redirect('/dashboard/posts')->with('success', 'Post has been Updated!');
+}
 
     /**
      * Remove the specified resource from storage.
