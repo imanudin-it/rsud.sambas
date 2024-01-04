@@ -191,12 +191,12 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
                         <li>
                           <div class="dropdown-divider"></div>
                         </li>
-                        <li>
+                        {{-- <li>
                           <a class="dropdown-item" href="/login/">
                             <i class='bx bx-log-in-circle me-2'></i>
                             <span class="align-middle"> Masuk</span>
                           </a>
-                        </li>
+                        </li> --}}
                       </ul>
                     </li>
                     <!-- User -->
