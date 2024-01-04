@@ -135,7 +135,7 @@ class DashboardPostController extends Controller
         'title' => 'required|max:255',
         'category_id' => 'required',
         'body' => 'required',
-        'image' => 'image|mimes:jpeg,png,jpg,gif|max:1024', // Sesuaikan dengan nama field di request
+        'foto' => 'image|mimes:jpeg,png,jpg,gif|max:1024', // Sesuaikan dengan nama field di request
         'galery_id' => ''
     ];
    
@@ -151,11 +151,11 @@ class DashboardPostController extends Controller
         $validatedData['published_at'] = null;
     }
 
-    if ($request->file('image') && $request->file('image')->isValid()) {
+    if ($request->file('foto') && $request->file('foto')->isValid()) {
         if ($post->foto) {
             Storage::delete($post->foto);
         }
-        $file = $request->file('image');
+        $file = $request->file('foto');
         $fileName = time() . '_' . $file->getClientOriginalName();
         $filePath =  $file->storeAs('post-images', $fileName, 'public');
         $validatedData['foto'] = $filePath; // Sesuaikan dengan nama field di tabel posts
