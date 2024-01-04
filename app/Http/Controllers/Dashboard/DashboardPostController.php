@@ -88,8 +88,8 @@ class DashboardPostController extends Controller
         if($request->publish == '1'){
             $validatedData['published_at'] = Carbon::now()->toDateTimeString();
         }
-        if ($request->file('image') && $request->file('image')->isValid()) {
-            $file = $request->file('image');
+        if ($request->file('foto') && $request->file('foto')->isValid()) {
+            $file = $request->file('foto');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $filePath =  $file->storeAs('post-images', $fileName,'public'); // Store the file in the storage/uploads directory
             $validatedData['foto'] = $filePath;

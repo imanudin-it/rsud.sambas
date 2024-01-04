@@ -32,7 +32,7 @@
                 <div class="col-sm-12 col-md-9">
                   <div id="image-preview" class="image-preview" style="width: 100%;">
                     <label for="image-upload" id="image-label">Choose File</label>
-                    <input type="file" name="image" id="image-upload" value="{{ old('image') }}" />
+                    <input type="file" name="foto" id="image-upload" value="{{ old('image') }}" />
                   @error('image')
                     <div class="invalid-feedback">
                       {{  $message }}
