@@ -83,7 +83,7 @@ class DashboardPostController extends Controller
             'category_id'   =>  'required',
             'galery_id'   =>  '',
             'body'  =>  'required',
-            'foto' => 'image|file|max:1024'
+            'image' => 'image|file|max:1024'
         ]);
         if($request->publish == '1'){
             $validatedData['published_at'] = Carbon::now()->toDateTimeString();
@@ -135,7 +135,7 @@ class DashboardPostController extends Controller
             'title' =>  'required|max:255',
             'category_id'   =>  'required',
             'body'  =>  'required',
-            'foto' => 'image|file|max:1024',
+            'image' => 'image|file|max:1024',
             'galery_id' => ''
         ];
        
