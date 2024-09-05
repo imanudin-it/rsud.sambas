@@ -11,6 +11,7 @@ use App\Http\Controllers\DB_GaleriFoto;
 use App\Http\Controllers\DB_GalleryController;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InformasiUmumController;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -70,6 +71,7 @@ Route::post('/logout/', [LoginController::class, 'logout']);
 
 Route::get('/profil/{kat}', [HomeController::class, 'profil']);
 Route::get('/informasi/umum/', [HomeController::class,'informasi_umum']); 
+Route::get('/standar-pelayanan', [InformasiUmumController::class,'standar_pelayanan']); 
 Route::get('/informasi/struktur-organisasi/',function(){
     return view('home.informasi.struktur-organisasi',[
         'title' => 'Struktur Organisasi'

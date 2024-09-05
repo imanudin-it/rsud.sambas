@@ -30,8 +30,7 @@
                                 <div class="col-md-6 col-6">
                                 <div class="card card-body mb-2">
                                     
-                                     <h6 class="card-title mb-0"><i class='bx bxs-message-square-detail'></i> {{ $row->name }} </h6>
-                                      {{-- <small class="card-text text-muted"> {!! $row->descriptions !!}</small> --}}
+                                     <h6><i class='bx bxs-message-square-detail'></i> {{ $row->name }} </h6>
                                             </div>
                               </div>    
                                     @endforeach

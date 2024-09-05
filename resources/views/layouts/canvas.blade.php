@@ -112,7 +112,7 @@
       </div>
       </a>
       
-      <a href="/tempat-tidur/">
+      <a href="/standar-pelayanan/">
         <div class="card link bt-primary  mb-3">
         <div class="card-body">
         <h5 class="card-title mb-2"><i class='bx bx-info-circle'></i> Standar Pelayanan </h5>
@@ -123,8 +123,8 @@
     </div>
   </div>
   {{-- End Canvas : Info Pelayanan --}}
-  
-  {{-- Canvas Jadwal Dokter --}}
+{{--   
+  Canvas Jadwal Dokter
 <div
 class="offcanvas offcanvas-start"
 tabindex="-1"
@@ -180,7 +180,7 @@ aria-labelledby="offcanvasStartLabel"
         </div>
     </div>
 </div>
-</div>
+</div> --}}
 {{-- End Canvas : Info Pelayanan --}}
 
     
