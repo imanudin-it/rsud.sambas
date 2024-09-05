@@ -10,7 +10,7 @@
         </div>
     </div>
       <div class="card p-3 mb-4">
-        <div class="table-responsive text-nowrap">
+        <div class="">
             <table class="table table-hover" id="dataTable">
                 <thead>
                     <tr>
