@@ -126,15 +126,33 @@
            
               <div class="owl-item h-100 ">
                 
-                <div class="card h-100 mb-3">
-                  <img class="card-img-top" src="{{ asset('storage/dokter/'.$dokter->foto) }}" width="80" alt="Card image cap" loading="lazy">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ $dokter->NAMADOKTER }}</h5>
-                    <p class="card-text">
-                      <small class="text-muted">Nama Spesialis</small>
-                    </p>
+                <div class="col-md">
+                  <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img class="card-img card-img-left" src="{{ asset('storage/dokter/'.$dokter->foto) }}" alt="Card image">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ $dokter->NAMADOKTER }}</h5>
+                          <p class="card-text">{{ $dokter->NAMAPROFESI }}
+                          </p>
+                          {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                {{-- <div class="card h-200 mb-3">
+                  <img class="card-img-top" src="{{ asset('storage/dokter/'.$dokter->foto) }}" width="80" alt="Card image cap" loading="lazy">
+                  <div class="card-body">
+                    <h6 class="card-title">{{ $dokter->NAMADOKTER }}</h6>
+                    <p class="card-text">
+                      <small class="text-muted">{{ $dokter->NAMAPROFESI }}</small>
+                    </p>
+                  </div>
+                </div> --}}
               </div>
             @endforeach
             </div>
@@ -392,7 +410,7 @@ $('.loop-dokter').owlCarousel({
     dots: false,
     responsive:{
       600:{
-            items:7
+            items:3
         },
       300:{
             items:2
