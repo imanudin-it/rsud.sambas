@@ -26,7 +26,7 @@ class HomeController extends Controller
             ->get();
 
         // Path to the images directory
-        $path = storage_path('app\public\slide-header');
+        $path = storage_path('app/public/slide-header');
 
         // Get all files from the directory
         $files = File::files($path);
