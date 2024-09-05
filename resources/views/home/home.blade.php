@@ -417,7 +417,7 @@ $('.loop-dokter').owlCarousel({
             items:3
         },
       300:{
-            items:1,
+            items:2,
             animateOut: 'slideOutDown',
             animateIn: 'flipInX',
         }
