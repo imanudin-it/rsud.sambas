@@ -130,7 +130,11 @@
                   <div class="card mb-3">
                     <div class="row g-0">
                       <div class="col-md-4">
+                        @if(!empty($dokter->foto))
                         <img class="card-img card-img-left" src="{{ asset('storage/dokter/'.$dokter->foto) }}" alt="Card image">
+                        @else
+                        <img class="card-img card-img-left" src="{{ asset('storage/dokter/profile.webp') }}" alt="Card image">
+                        @endif
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
