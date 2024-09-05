@@ -23,7 +23,7 @@
                     @foreach ($standar_pelayanan as $row )
                         <tr>
                             <td> {{ $loop->iteration }}</td>
-                            <td> {{ $row->nama }}</td>
+                            <td> <a href="{{ asset('/storage/standar-pelayanan/'.$row->file) }}" target="_blank()"> {{ $row->nama }} </a> </td>
                             <td> <a href="{{ asset('/storage/standar-pelayanan/'.$row->file) }}" target="_blank()"> <i class='bx bxs-file-pdf'></i> Lihat File </a> </td>
                         </tr>
                     @endforeach
