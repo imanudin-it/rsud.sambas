@@ -54,7 +54,7 @@
   </style>
 
 <div class="container-xxl flex-grow-1 pt-3"> 
-  <div class="card shadow bg-header mb-4" style="height: 240px;" loading="lazy">
+  {{-- <div class="card shadow bg-header mb-4" style="height: 240px;" loading="lazy">
       <h5 class="pl-2 pt-4 mb-3 text-white"> Selamat Datang ! </h5>
       <h1 class="fw-bold mb-2 pl-2 text-white" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> <u> RSUD SAMBAS </u></h1>
       <small> 
@@ -63,8 +63,23 @@
           <i class='bx bxs-envelope'></i> admin@rsudsambas.co.id 
         </div>
       </small>
+  </div> --}}
+  <div class="loop-header owl-carousel owl-theme owl-loaded mb-2" >
+    <div class="owl-stage-outer">
+        <div class="owl-stage">
+          @foreach($slide_header as $image)
+        
+          <div class="owl-item">
+            <div class="card">
+              <div class="card-body mb-0 p-0" style="max-height: 250px; overflow: hidden;">
+               <img alt="image" src="{{ asset('/storage/slide-header/'.$image) }}" width="100%" height="250" style="border-radius:10px;" class=" bt-primary">
+            </div>
+            </div>
+          </div>
+        @endforeach
+        </div>
+      </div>
   </div>
-
   
   <div class="row">
     <div class="col-lg-8">
@@ -86,7 +101,7 @@
               <p class="text-muted pt-1 p-2"> <i class='bx bxs-bolt-circle'></i> {{ $katasambutan->jabatan }}
           </div>
         </div> <div class="card-text p-3" align="justify">
-                {!! str_replace('<div>','',Str::limit($katasambutan->isi, '200', '   ...')) !!}
+                {!! str_replace('<div>','',Str::limit($katasambutan->isi, '250', '   ...')) !!}
                   <div align="right" class="pt-2"> <a href="/kata-sambutan" class="btn btn-secondary btn-sm"><i class='bx bxs-comment-detail bx-tada' ></i> Lihat Selengkapnya &raquo; </a> </div>
                 </div>
               
@@ -96,6 +111,47 @@
       </div>
 {{-- end row menu sambutan --}}
 
+<div class="container-xxl flex-grow-1"> 
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-12">
+    <div class="divider text-center">
+      <div class="divider-text">
+        <h5 class="text-muted fw-bold"> <i class='bx bx-user' ></i> Dokter Kami : </h5>
+      </div>
+    </div>
+      <div class="mb-4 loop-dokter owl-carousel owl-theme owl-loaded">
+        <div class="owl-stage-outer">
+            <div class="owl-stage">
+            @foreach ($dokters as $dokter)
+           
+              <div class="owl-item h-100 ">
+                
+                <div class="card h-100 mb-3">
+                  <img class="card-img-top" src="{{ asset('storage/dokter/'.$dokter->foto) }}" width="80" alt="Card image cap" loading="lazy">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $dokter->NAMADOKTER }}</h5>
+                    <p class="card-text">
+                      <small class="text-muted">Nama Spesialis</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            @endforeach
+            </div>
+          </div>
+          <div align="right" class="pt-2"> <a href="/dokter" class="btn btn-primary btn-sm"><i class='bx bx-grid-small bx-tada' ></i> Lihat Semua Dokter &raquo; </a> </div>
+      </div>
+  </div>
+  {{-- <div class="col-lg-6 col-md-6 col-12 mb-4">
+    <div class="divider text-center">
+      <div class="divider-text">
+        <h5 class="text-muted fw-bold"> <i class='bx bxs-videos' ></i> Video Layanan : </h5>
+      </div>
+    </div>
+    <iframe class="card card-body p-1" style="border-radius:10px;" width="100%" height="300" src="https://www.youtube.com/embed/81TTX3czdnQ" title="ALUR PELAYANAN RSUD SAMBAS - PKRS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div> --}}
+  </div>
+</div>
 {{-- Postingan --}}
 <div class="container-xxl flex-grow-1"> 
   <div class="divider text-center">
@@ -118,7 +174,7 @@
                @endif
                loading="lazy"> 
               </div>
-        <h5 class="card-title text-muted" align="justify"><a href="/posts/{{ $latestPost->slug }}">{{ $latestPost->title }}</a></h5>
+        <h5 class="card-title text-muted"><a href="/posts/{{ $latestPost->slug }}">{{ $latestPost->title }}</a></h5>
         
         
       </div>
@@ -154,32 +210,48 @@
   </div>
 </div>
 {{-- End Post Area --}}
+<div class="row">
 {{-- Fasilitas dan Layanan --}}
-<div class="divider text-center">
-  <div class="divider-text">
-    <h5 class="text-muted fw-bold"> <i class='bx bxs-contact' ></i> Fasilitas dan Layanan : </h5>
-  </div>
-</div>
-<div class="card bg-label-secondary bt-primary p-0 m-0 mb-4 loop owl-carousel owl-theme owl-loaded">
-  <div class="card-body p-3 ">
-  <div class="owl-stage-outer">
-      <div class="owl-stage">
-      @foreach ($layanan as $pelayanan)
-      
-        <div class="owl-item">
-          <div class="card">
-              <div class="text-center text-muted p-3 fw-bold card-title bg-label-success mb-1"><a href="/jenis-pelayanan/{{ $pelayanan->slug }}">{{ $pelayanan->name }}</a></div>
-            <div class="card-body p-0" style="max-height: 200px; overflow: hidden;">
-             <img alt="image" src="{{ asset('/storage/'.$pelayanan->image) }}" width="100%" height="190">
-          </div>
+
+  <div class="col-lg-8 col-md-8 col-12">
+    <div class="divider text-center">
+      <div class="divider-text">
+        <h5 class="text-muted fw-bold"> <i class='bx bx-buildings bx-tada'></i> Fasilitas dan Layanan : </h5>
+      </div>
+    </div>
+    <div class="p-0 m-0 mb-3 loop owl-carousel owl-theme owl-loaded">
+      <div class="card-body p-0 ">
+      <div class="owl-stage-outer">
+          <div class="owl-stage">
+          @foreach ($layanan as $pelayanan)
+          
+            <div class="owl-item bt-primary ">
+              <div class="card">
+                  <div class="text-center text-muted p-3 fw-bold card-title bg-label-success mb-1"><a href="/jenis-pelayanan/{{ $pelayanan->slug }}">{{ $pelayanan->name }}</a></div>
+                <div class="card-body p-0" style="max-height: 200px; overflow: hidden;">
+                <img alt="image" src="{{ asset('/storage/'.$pelayanan->image) }}" width="100%" height="190">
+              </div>
+              </div>
+            </div>
+          @endforeach
           </div>
         </div>
-      @endforeach
       </div>
     </div>
   </div>
-</div>
 {{-- end Fasilitas --}}
+<div class="col-lg-4 col-md-4 col-12">
+  <div class="divider text-center">
+    <div class="divider-text">
+      <h5 class="text-muted fw-bold"> <i class='bx bx-badge-check' ></i> Survey Kepuasan Pasien : </h5>
+    </div>
+  </div>
+  <a href="//bit.ly/SurveyKepuasanPasienRSUDSambas" target="_blank()">
+    <img alt="image" src="{{ asset('/storage/survey-kepuasan.jpg') }}" width="100%" height="250" style="border-radius:10px;" class=" bt-primary">
+            
+  </a>
+  </div>
+  </div>
 {{-- Hubungi Kami : --}}
 <div class="divider text-center pt-2">
   <div class="divider-text">
@@ -286,6 +358,44 @@
     responsive:{
         600:{
             items:3
+        },
+        300:{
+            items:2
+        }
+    }
+});
+$('.loop-header').owlCarousel({
+    lazyLoad:true,
+    center: true,
+    items:1,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:4000,
+    dots: false,
+    responsive:{
+        600:{
+            items:2
+        }
+    }
+});
+
+
+$('.loop-dokter').owlCarousel({
+    lazyLoad:true,
+    center: true,
+    items:1,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:3000,
+    dots: false,
+    responsive:{
+      600:{
+            items:7
+        },
+      300:{
+            items:2
         }
     }
 });

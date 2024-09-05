@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dokter;
 use App\Models\InformasiUmum;
 use App\Models\KataSambutan;
 use App\Models\Poliklinik;
@@ -10,24 +11,41 @@ use App\Models\ProfilRS;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Profiler\Profile;
-
+use Illuminate\Support\Facades\File;
 class HomeController extends Controller
 {
     public function index()
     {
-        $latestPost = Post::latest('created_at')->where('published_at','!=','')->first();
-        $nextPost = Post::where('published_at','!=','')
+        $latestPost = Post::latest('created_at')
+                  ->whereNotNull('published_at')
+                  ->first();
+        $nextPost = Post::whereNotNull('published_at')
             ->latest('created_at')
             ->skip(1) // Ganti nilai ini dengan 1 jika Anda ingin mendapatkan post berikutnya
             ->take(4)
             ->get();
 
+        // Path to the images directory
+        $path = storage_path('app\public\slide-header');
+
+        // Get all files from the directory
+        $files = File::files($path);
+
+        // Extract file names
+        $fileNames = array_map(function($file) {
+            return $file->getFilename();
+        }, $files);
+
+        $slide_header = $fileNames;
+        //dd($latestPost);
         return view('home.home', [
             "title" => "Beranda",
             "latestPost" => $latestPost,
             "nextPost" => $nextPost,
             "layanan" => Service::orderBy('created_at', 'asc')->get(),
+            "dokters" => Dokter::orderBy('NAMADOKTER', 'asc')->get(),
             "katasambutan" => KataSambutan::latest()->first(),
+            "slide_header" => $slide_header,
             // "poly" => Poliklinik::where('kode_bpjs', '!=', '')
             //         ->where('status','=','0')
             //         ->whereNotIn('kode',[42,44])

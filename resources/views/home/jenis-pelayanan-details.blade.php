@@ -25,17 +25,27 @@
                                 <h5 class="text-muted fw-bold"> <i class='bx bxs-bookmark bx-tada' ></i> Fasilitas Terkait : </h5>
                             </div>
                           </div>
+                          <div class="row">
                                 @foreach ($subdata as $row)
-                                <div class="card mb-2">
-                                  <div class="card-body">
+                                <div class="col-md-6 col-6">
+                                <div class="card card-body mb-2">
                                     
-                                     <h6 class="card-title"><i class='bx bxs-message-square-detail'></i> {{ $row->name }} </h6>
-                                      <small class="card-text text-muted"> {!! $row->descriptions !!}</small>
+                                     <h6 class="card-title mb-0"><i class='bx bxs-message-square-detail'></i> {{ $row->name }} </h6>
+                                      {{-- <small class="card-text text-muted"> {!! $row->descriptions !!}</small> --}}
                                             </div>
-                                    </div>
-                                  {{-- </div>
-                                </div> --}}
+                              </div>    
                                     @endforeach
+                          </div>
+                          @endif
+
+                          @if (!empty($data->video))
+                          <br>
+                          <div class="divider text-start pt-2">
+                            <div class="divider-text">
+                                <h5 class="text-muted fw-bold"> <i class='bx bxs-bookmark bx-tada' ></i> Alur Pelayanan : </h5>
+                            </div>
+                          </div>
+                          {!! $data->video !!}
                           @endif
                     </div>
                   </div>

@@ -69,7 +69,19 @@ Route::post('/go/', [LoginController::class, 'authenticate']);
 Route::post('/logout/', [LoginController::class, 'logout']);
 
 Route::get('/profil/{kat}', [HomeController::class, 'profil']);
-Route::get('/informasi/umum/', [HomeController::class,'informasi_umum']) ; 
+Route::get('/informasi/umum/', [HomeController::class,'informasi_umum']); 
+Route::get('/informasi/struktur-organisasi/',function(){
+    return view('home.informasi.struktur-organisasi',[
+        'title' => 'Struktur Organisasi'
+    ]);
+});
+
+Route::get('/pendaftaran-online-wa',function(){
+    return view('home.pendaftaran-wa',[
+        'title' => 'PANDUAN PENDAFTARAN ONLINE RAWAT JALAN MENGGUNAKAN WHATSAPP'
+    ]);
+});
+
 
 Route::group(['middleware' => ['auth']], function () 
 {

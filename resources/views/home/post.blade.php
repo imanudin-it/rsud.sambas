@@ -46,6 +46,7 @@
                         </div>
                         <div class="article-details" style="text-align: justify;">
                             <p>{!! $post->body !!}</p>
+                            <br>
                         </div>
                     @if($post->gallery()->count())
                     <div class="divider text-center">

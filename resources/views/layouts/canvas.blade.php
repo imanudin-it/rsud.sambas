@@ -31,13 +31,14 @@
       <hr class="text-muted">
       <a href="/profil/sejarah" class="btn btn-primary mb-2  w-100" align="left"><i class='bx bx-history bx-tada' ></i> Sejarah </a>
       <a href="/profil/visi-misi" class="text-left btn btn-info mb-2  w-100"><i class='bx bx-message-dots bx-tada' ></i> Visi & Misi </a>
+      <a href="/informasi/struktur-organisasi" class="text-left btn btn-info mb-2  w-100"><i class='bx bx-grid-alt bx-tada' ></i> Struktur Organisasi </a>
       
     </div>
   </div>
   {{-- End Canvas Profile --}}
 
  {{-- Canvas Daftar Online --}}
-      <div
+      {{-- <div
       class="offcanvas offcanvas-start"
       tabindex="-1"
       id="daftarOnline"
@@ -72,7 +73,7 @@
             </div>
         </a>
       </div>
-    </div>
+    </div> --}}
     {{-- End Canvas Daftar Online --}}
 
     
@@ -114,8 +115,8 @@
       <a href="/tempat-tidur/">
         <div class="card link bt-primary  mb-3">
         <div class="card-body">
-        <h5 class="card-title mb-2"><i class='bx bx-info-circle'></i> Ketersediaan Tempat Tidur </h5>
-        <small class="card-text text-muted"><i>Menampilkan list data kamar yang tersedia di RSUD Sambas</i></small>
+        <h5 class="card-title mb-2"><i class='bx bx-info-circle'></i> Standar Pelayanan </h5>
+        <small class="card-text text-muted"><i>Standar Pelayanan di RSUD Sambas</i></small>
       </div>
       </div>
       </a>
