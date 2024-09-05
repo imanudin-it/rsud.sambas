@@ -127,7 +127,7 @@
               <div class="owl-item h-100 ">
                 
                 <div class="col-md">
-                  <div class="card mb-3">
+                  <div class="card">
                     <div class="row g-0">
                       <div class="col-md-4">
                         @if(!empty($dokter->foto))
@@ -161,7 +161,7 @@
             @endforeach
             </div>
           </div>
-          <div align="right" class="pt-2"> <a href="/dokter" class="btn btn-primary btn-sm"><i class='bx bx-grid-small bx-tada' ></i> Lihat Semua Dokter &raquo; </a> </div>
+          <div align="right"> <a href="/dokter" class="btn btn-primary btn-sm"><i class='bx bx-grid-small bx-tada' ></i> Lihat Semua Dokter &raquo; </a> </div>
       </div>
   </div>
   {{-- <div class="col-lg-6 col-md-6 col-12 mb-4">
