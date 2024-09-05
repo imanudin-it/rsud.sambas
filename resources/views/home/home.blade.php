@@ -417,7 +417,9 @@ $('.loop-dokter').owlCarousel({
             items:3
         },
       300:{
-            items:2
+            items:1,
+            animateOut: 'slideOutDown',
+            animateIn: 'flipInX',
         }
     }
 });
