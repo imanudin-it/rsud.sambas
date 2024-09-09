@@ -124,10 +124,10 @@
             <div class="owl-stage">
             @foreach ($dokters as $dokter)
            
-              <div class="owl-item h-100 ">
+              <div class="owl-item">
                 
                 <div class="col-md">
-                  <div class="card">
+                  <div class="card h-100 mb-3">
                     <div class="row g-0">
                       <div class="col-md-4">
                         @if(!empty($dokter->foto))

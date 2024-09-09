@@ -13,8 +13,8 @@
           <div class="card-body row pt-4" align="justify">
             @foreach ($dokters as $dokter)
                 
-            <div class="col-md-6">
-                <div class="card h-100 mb-3">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
                   <div class="row g-0">
                     <div class="col-md-4">
                       @if(!empty($dokter->foto))
