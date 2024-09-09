@@ -377,9 +377,9 @@
         </div>
       </div> --}}
       
-      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+      {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
       <div class="elfsight-app-afc0c044-9e2d-4816-8236-d058f301e739 mx-auto text-center pt-2 mb-3" style="width:100%"></div>
-                  
+                   --}}
 <script src="{{ asset('assets/owlcarousel/vendors/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/owlcarousel/owlcarousel/owl.carousel.min.js') }}"></script>
 
@@ -440,6 +440,6 @@ $('.loop-dokter').owlCarousel({
 });
 </script>
 
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-c9f705b3-632e-4171-8a91-5b379f33ceaa"></div>
+{{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-c9f705b3-632e-4171-8a91-5b379f33ceaa"></div> --}}
 @endsection
