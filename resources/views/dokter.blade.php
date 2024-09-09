@@ -25,8 +25,8 @@
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
-                        <h5 class="card-title">{{ $dokter->NAMADOKTER }}</h5>
-                        <small class="card-text small">{{ $dokter->NAMAPROFESI }}
+                        <h5 class="card-title text-right">{{ $dokter->NAMADOKTER }}</h5>
+                        <small class="card-text text-right">{{ $dokter->NAMAPROFESI }}
                         </small>
                         <hr>
                         {!! nl2br(e($dokter->pesan)) !!}
