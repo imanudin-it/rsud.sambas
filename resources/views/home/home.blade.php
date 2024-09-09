@@ -165,7 +165,7 @@
       </div>
       <div class="row">
         <div class="d-grid gap-2 col-lg-6 mx-auto">
-          <a class="btn bg-label-primary btn-lg" href="/dokter"><i class='bx bx-user-circle bx-tada'></i> Lihat Jadwal Dokter</a>
+          <a class="btn bg-label-primary btn-lg" href="/jadwal-dokter"><i class='bx bx-user-circle bx-tada'></i> Lihat Jadwal Dokter</a>
         </div>
       </div>
   </div>

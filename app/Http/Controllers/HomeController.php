@@ -126,4 +126,13 @@ class HomeController extends Controller
          ];
          return view('home.informasi.tempat_tidur',$data);
     }
+
+    public function dokter()
+    {
+        return view('dokter', [
+            'title' => "Jadwal Dokter",
+            "dokters" => Dokter::orderBy('NAMADOKTER', 'asc')->get(),
+            
+        ]);
+    }
 }
