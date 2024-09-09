@@ -161,7 +161,12 @@
             @endforeach
             </div>
           </div>
-          <div align="right"> <a href="/dokter" class="btn btn-primary btn-sm"><i class='bx bx-grid-small bx-tada' ></i> Lihat Semua Dokter &raquo; </a> </div>
+          {{-- <div align="right"> <a href="/dokter" class="btn btn-primary btn-sm"><i class='bx bx-grid-small bx-tada' ></i> Lihat Semua Dokter &raquo; </a> </div> --}}
+      </div>
+      <div class="row">
+        <div class="d-grid gap-2 col-lg-6 mx-auto">
+          <a class="btn bg-label-primary btn-lg" href="/dokter"><i class='bx bx-user-circle bx-tada'></i> Lihat Jadwal Dokter</a>
+        </div>
       </div>
   </div>
   {{-- <div class="col-lg-6 col-md-6 col-12 mb-4">
@@ -203,7 +208,7 @@
     </div>
   </div>
 
-  <div class="col-lg-6 mb-1">
+  <div class="col-lg-6 mb-3">
     @foreach ($nextPost as $post)
     <div class="card shadow mb-2">
         <div class="card-body p-3">
@@ -228,10 +233,20 @@
         </div>
     </div>
 @endforeach 
-<div align="right" class="pt-2"> <a href="/posts" class="btn btn-primary btn-sm"><i class='bx bx-grid-small bx-tada' ></i> Lihat Semua &raquo; </a> </div>
+
+{{-- 
+<div align="right" class="pt-2"> <a href="/posts" class="btn btn-primary btn-sm">Lihat Semua &raquo; </a> </div>
+  </div> --}}
+ 
+</div>
+
+{{-- End Post Area --}}
+</div>
+<div class="row">
+  <div class="d-grid gap-2 col-lg-6 mx-auto">
+    <a class="btn bg-label-primary btn-lg" href="/posts"><i class='bx bx-grid-small bx-tada' ></i> Lihat Semua Postingan</a>
   </div>
 </div>
-{{-- End Post Area --}}
 <div class="row">
 {{-- Fasilitas dan Layanan --}}
 
@@ -362,9 +377,9 @@
         </div>
       </div> --}}
       
-      {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
       <div class="elfsight-app-afc0c044-9e2d-4816-8236-d058f301e739 mx-auto text-center pt-2 mb-3" style="width:100%"></div>
-                   --}}
+                  
 <script src="{{ asset('assets/owlcarousel/vendors/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/owlcarousel/owlcarousel/owl.carousel.min.js') }}"></script>
 
