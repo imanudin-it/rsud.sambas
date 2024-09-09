@@ -10,7 +10,7 @@
           <h2> {{ $title }} RSUD Sambas</h2>
           </div>
           </div>
-          <div class="card-body row pt-4" align="justify">
+          <div class="card-body row pt-4">
             @foreach ($dokters as $dokter)
                 
             <div class="col-md-6 mb-3">
@@ -26,8 +26,8 @@
                     <div class="col-md-8">
                       <div class="card-body">
                         <h5 class="card-title">{{ $dokter->NAMADOKTER }}</h5>
-                        <p class="card-text">{{ $dokter->NAMAPROFESI }}
-                        </p>
+                        <small class="card-text small">{{ $dokter->NAMAPROFESI }}
+                        </small>
                         <hr>
                         {!! nl2br(e($dokter->pesan)) !!}
 
