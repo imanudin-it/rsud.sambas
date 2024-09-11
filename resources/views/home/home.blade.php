@@ -131,7 +131,7 @@
                     <div class="row g-0">
                       <div class="col-md-4">
                         @if(!empty($dokter->foto))
-                        <img class="card-img card-img-left" src="{{ asset('storage/dokter/'.$dokter->foto) }}" alt="Card image"style="width:100px; height: 200px;">
+                        <img class="card-img card-img-left" src="{{ asset('storage/dokter/'.$dokter->foto) }}" alt="Card image"style="width:100px; height: 150px;">
                         @else
                         <img class="card-img card-img-left" src="{{ asset('storage/dokter/profile.webp') }}" alt="Card image">
                         @endif
