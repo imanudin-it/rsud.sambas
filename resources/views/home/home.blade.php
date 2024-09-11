@@ -132,7 +132,7 @@
                       <div class="col-md-4">
                         @if(!empty($dokter->foto))
                         <img class="card-img card-img-left " src="{{ asset('storage/dokter/'.$dokter->foto) }}" alt="Card image" style="max-height: 150px;
-    overflow-y: hidden;">
+    overflow: hidden;">
                         @else
                         <img class="card-img card-img-left" src="{{ asset('storage/dokter/profile.webp') }}" alt="Card image">
                         @endif
