@@ -10,8 +10,13 @@
           <h2> {{ $title }} RSUD Sambas</h2>
           </div>
           </div>
-          <iframe src="https://web.rsudsambas.co.id/tv" width="100%" height="100%" style="max-height:400px;"></iframe> <br>
-            
+          <br>
+          <iframe src="https://web.rsudsambas.co.id/tv" width="100%" height="700"></iframe> <br>
+          <div class="divider text-center pt-3">
+            <div class="divider-text">
+              <h5 class="text-muted fw-bold"> <i class='bx bx-user' ></i> Dokter Kami : </h5>
+            </div>
+          </div>
           <div class="card-body row pt-4">
             @foreach ($dokters as $dokter)
                 
