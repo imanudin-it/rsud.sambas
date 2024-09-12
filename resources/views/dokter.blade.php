@@ -11,6 +11,7 @@
           </div>
           </div>
           <div class="card-body row pt-4">
+            <iframe src="https://web.rsudsambas.co.id/tv" width="100%" height="100%"> <br>
             @foreach ($dokters as $dokter)
                 
             <div class="col-md-4 mb-3">
