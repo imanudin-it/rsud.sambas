@@ -71,7 +71,7 @@
         
           <div class="owl-item">
             <div class="card">
-              <div class="card-body mb-0 p-0" style="max-height: 250px; overflow: hidden;">
+              <div class="card-body mb-0 p-0" style="max-height: 300px; overflow: hidden;">
                <img alt="image" src="{{ asset('/storage/slide-header/'.$image) }}" width="100%" height="250" style="border-radius:10px;" class=" bt-primary">
             </div>
             </div>
