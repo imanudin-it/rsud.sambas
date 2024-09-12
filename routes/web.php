@@ -71,6 +71,7 @@ Route::post('/logout/', [LoginController::class, 'logout']);
 
 Route::get('/profil/{kat}', [HomeController::class, 'profil']);
 Route::get('/informasi/umum/', [HomeController::class,'informasi_umum']); 
+Route::get('/tv', [HomeController::class,'tv']); 
 Route::get('/jadwal-dokter', [HomeController::class,'dokter']); 
 Route::get('/standar-pelayanan', [InformasiUmumController::class,'standar_pelayanan']); 
 Route::get('/informasi/struktur-organisasi/',function(){

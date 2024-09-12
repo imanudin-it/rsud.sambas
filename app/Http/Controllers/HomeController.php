@@ -61,6 +61,18 @@ class HomeController extends Controller
         ]);
     }
 
+    public function tv()
+    {
+        $dokters = Dokter::with('poly')
+            ->where('KDPROFESI', '1')
+            ->get();
+            //dd($dokters);
+        return view('tv.index',[
+            'title' => 'Jenis Pelayanan',
+            'dokters' => $dokters
+        ]);
+    }
+
     public function jenis_pelayanan_details($slug)
     {
         $pelayanan = Service::where('slug', $slug)->first();
