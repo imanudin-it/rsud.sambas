@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dokter;
-use App\Models\InformasiUmum;
-use App\Models\KataSambutan;
-use App\Models\Poliklinik;
+use Carbon\Carbon;
 use App\Models\Post;
-use App\Models\ProfilRS;
+use App\Models\Dokter;
 use App\Models\Service;
+use App\Models\ProfilRS;
+use App\Models\Poliklinik;
+use App\Models\KataSambutan;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Profiler\Profile;
+use App\Models\InformasiUmum;
 use Illuminate\Support\Facades\File;
+use Symfony\Component\HttpKernel\Profiler\Profile;
+
 class HomeController extends Controller
 {
     public function index()
@@ -131,12 +133,25 @@ class HomeController extends Controller
 
     public function list_kamar()
     {
-        $json = json_decode(file_get_contents("http://36.91.145.69/bridging/applicares/?link=list-kamar"));
+        // Fetch JSON data from the API
+        $json = json_decode(file_get_contents("http://rsudsambas.co.id/bridging/siranap/tempat_tidur.php"));
+
+        // Get today's date in 'Y-m-d' format
+        $today = Carbon::today()->toDateString();
+
+        // Filter the rooms to include only those with today's date in tglupdate
+        $filteredData = array_filter($json->response->list, function($item) use ($today) {
+            return substr($item->tglupdate, 0, 10) == $today;
+        });
+
+        // Prepare data to pass to the view
         $data = [
             'title' => 'Ketersediaan Tempat Tidur',
-            'data' => $json->response->list,
-         ];
-         return view('home.informasi.tempat_tidur',$data);
+            'data' => $filteredData,
+        ];
+
+        // Return the view with the filtered data
+        return view('home.informasi.tempat_tidur', $data);
     }
 
     public function dokter()
