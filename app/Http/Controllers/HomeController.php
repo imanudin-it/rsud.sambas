@@ -140,7 +140,7 @@ class HomeController extends Controller
         $today = Carbon::today()->toDateString();
 
         // Filter the rooms to include only those with today's date in tglupdate
-        $filteredData = array_filter($json->response->list, function($item) use ($today) {
+        $filteredData = array_filter($json->fasyankes, function($item) use ($today) {
             return substr($item->tglupdate, 0, 10) == $today;
         });
 
