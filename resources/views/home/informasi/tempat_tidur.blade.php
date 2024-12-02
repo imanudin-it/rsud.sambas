@@ -14,7 +14,7 @@
         <ul class="list-group">
           
             @foreach ($data as $list)
-            @if(\Carbon\Carbon::parse($list->tglupdate)->isToday())
+            @if(!empty($list->ruang))
                 <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex justify-content-between w-100">
                       <h6>{{ $list->ruang }}</h6>
