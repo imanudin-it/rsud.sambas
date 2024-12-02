@@ -136,18 +136,10 @@ class HomeController extends Controller
         // Fetch JSON data from the API
         $json = json_decode(file_get_contents("http://rsudsambas.co.id/bridging/siranap/tempat_tidur.php"));
 
-        // Get today's date in 'Y-m-d' format
-        $today = Carbon::today()->toDateString();
-
-        // Filter the rooms to include only those with today's date in tglupdate
-        $filteredData = array_filter($json->fasyankes, function($item) use ($today) {
-            return substr($item->tglupdate, 0, 10) == $today;
-        });
-
         // Prepare data to pass to the view
         $data = [
             'title' => 'Ketersediaan Tempat Tidur',
-            'data' => $filteredData,
+            'data' => $json->fasyankes,
         ];
 
         // Return the view with the filtered data
