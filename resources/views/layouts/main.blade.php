@@ -146,7 +146,7 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
             <!-- Navbar -->
   
             <nav
-              class="layout-navbar container-xxxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+              class="layout-navbar p-2 p-lg-4 container-xxxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
               id="layout-navbar"
             >
               <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
