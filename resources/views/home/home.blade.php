@@ -4,9 +4,6 @@
 {{-- <link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.theme.default.min.css') }}"> --}}
 <style>
-  .container-xxxl{
-    padding: 25px !important;
-  }
   .bg-header{
     background-image: url('{{ asset('storage/header-rsud.webp') }}');
     background-size: cover;
@@ -55,7 +52,7 @@
 }
   </style>
 
-<div class="container-xxxl flex-grow-1 pt-3"> 
+<div class="p-lg-4 container-xxxl flex-grow-1 pt-3"> 
   {{-- <div class="card shadow bg-header mb-4" style="height: 240px;" loading="lazy">
       <h5 class="pl-2 pt-4 mb-3 text-white"> Selamat Datang ! </h5>
       <h1 class="fw-bold mb-2 pl-2 text-white" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> <u> RSUD SAMBAS </u></h1>
@@ -113,7 +110,7 @@
       </div>
 {{-- end row menu sambutan --}}
 
-<div class="container-xxxl flex-grow-1"> 
+<div class="p-lg-4 container-xxxl flex-grow-1"> 
   <div class="row">
     <div class="col-lg-12 col-md-12 col-12">
     <div class="divider text-center">
@@ -183,7 +180,7 @@
   </div>
 </div>
 {{-- Postingan --}}
-<div class="container-xxxl flex-grow-1"> 
+<div class="p-lg-4 container-xxxl flex-grow-1"> 
   <div class="divider text-center">
     <div class="divider-text">
       <h5 class="text-muted fw-bold"> <i class='bx bx-news' ></i> Postingan Terbaru : </h5>

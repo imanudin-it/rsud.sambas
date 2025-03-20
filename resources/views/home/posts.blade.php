@@ -2,7 +2,7 @@
 
 @section('container')
 
-<div class="container-xxxl flex-grow-1 pt-3">
+<div class="p-lg-4 container-xxxl flex-grow-1 pt-3">
     
     <div class="row">
         <div class="col-md-8 col-lg-8">
