@@ -10,7 +10,7 @@
             <h2> {{ $title }} </h2>
             </div>
             </div>
-            <div class="card-body pt-4" align="justify">
+            <div class="card-body pt-4">
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-info mb-1">

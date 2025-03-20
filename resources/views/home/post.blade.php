@@ -36,7 +36,7 @@
             <h4> {{ $post->title }} </h4>
             </div>
             </div>
-            <div class="card-body pt-4" align="justify">
+            <div class="card-body pt-4">
                 <p class="card-text">
                     <span class="text-white badge bg-secondary">  {{ Carbon\Carbon::parse($post->published_at)->format('d F Y'); }} </span>
               <a class="text-white badge bg-info"  href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }} </a>
