@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.theme.default.min.css') }}">
 
-<div class="p-4 container-xxxl flex-grow-1 pt-3">
+<div class="container-xxxl flex-grow-1 pt-3">
     <div class="row">
       <div class="col-lg-8 col-md-12">
         <div class="card mb-3">
