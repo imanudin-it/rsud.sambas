@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="container-xxl flex-grow-1 pt-3 no-wrap">
+<div class="p-4 container-xxxl flex-grow-1 pt-3 no-wrap">
   <div class="row">
     <div class="col-lg-8 col-md-12">
         <div class="card mb-3">

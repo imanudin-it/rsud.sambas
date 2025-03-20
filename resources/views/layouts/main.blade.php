@@ -146,7 +146,7 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
             <!-- Navbar -->
   
             <nav
-              class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+              class="layout-navbar container-xxxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
               id="layout-navbar"
             >
               <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
@@ -223,7 +223,6 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
               <!-- Content -->
                 @yield('container')
             </div>
-            
 </body>
 
 @php
