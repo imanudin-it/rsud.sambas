@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('container')
-<link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.carousel.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.theme.default.min.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.theme.default.min.css') }}"> --}}
 <style>
 
   .bg-header{
@@ -381,65 +381,6 @@
       {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
       <div class="elfsight-app-afc0c044-9e2d-4816-8236-d058f301e739 mx-auto text-center pt-2 mb-3" style="width:100%"></div>
                    --}}
-<script src="{{ asset('assets/owlcarousel/vendors/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/owlcarousel/owlcarousel/owl.carousel.min.js') }}"></script>
-
-<script>
-  $('.loop').owlCarousel({
-    lazyLoad:true,
-    center: true,
-    items:1,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:3000,
-    responsive:{
-        600:{
-            items:3
-        },
-        300:{
-            items:2
-        }
-    }
-});
-$('.loop-header').owlCarousel({
-    lazyLoad:true,
-    center: true,
-    items:1,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:4000,
-    dots: false,
-    responsive:{
-        600:{
-            items:2
-        }
-    }
-});
-
-
-$('.loop-dokter').owlCarousel({
-    lazyLoad:true,
-    center: true,
-    items:1,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:3000,
-    dots: false,
-    responsive:{
-      600:{
-            items:3
-        },
-      300:{
-            items:2,
-            animateOut: 'slideOutDown',
-            animateIn: 'flipInX',
-        }
-    }
-});
-</script>
 
 {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <div class="elfsight-app-c9f705b3-632e-4171-8a91-5b379f33ceaa"></div> --}}

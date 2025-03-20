@@ -72,6 +72,10 @@
   defer
   init
 ></script>
+
+<link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/owlcarousel/owlcarousel/assets/owl.theme.default.min.css') }}">
+
     <style>
         /* Menambahkan background image ke seluruh body */
 .hero {
@@ -222,7 +226,37 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
             
 </body>
 
-<img src="{{ asset('assets/img/footer-1.jpg') }}" width="100%">
+@php
+use Illuminate\Support\Facades\Storage;
+
+$slide = Storage::files('public/slide-footer/');
+
+// Filter hanya file gambar
+$slide = array_filter($slide, function ($file) {
+    return preg_match('/\.(jpg|jpeg|png|gif)$/i', $file);
+});
+
+// Menghapus prefix "public/" agar bisa digunakan di `asset()`
+$slide = array_map(function ($file) {
+    return str_replace('public/', '', $file);
+}, $slide);
+@endphp
+
+<div class="mb-4 loop-footer owl-carousel owl-theme">
+    @foreach ($slide as $gambar)
+        <div class="item">
+            <div class="card h-100 mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img class="card-img card-img-left" src="{{ asset("storage/$gambar") }}" alt="Slide Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+</div>
+
+
 <footer class="footer text-muted bg-dark p-0 mb-0">
   {{-- <img src="{{ asset('storage/footer3.jpg') }}" width="100%"> --}}
     <div
@@ -275,6 +309,67 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
             $('#background-loading').fadeOut("slow");
         });
     </script> --}}
+
+    <script src="{{ asset('assets/owlcarousel/vendors/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/owlcarousel/owlcarousel/owl.carousel.min.js') }}"></script>
+
+<script>
+  $('.loop').owlCarousel({
+    lazyLoad:true,
+    center: true,
+    items:1,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:3000,
+    responsive:{
+        600:{
+            items:3
+        },
+        300:{
+            items:2
+        }
+    }
+});
+$('.loop-header').owlCarousel({
+    lazyLoad:true,
+    center: true,
+    items:1,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:4000,
+    dots: false,
+    responsive:{
+        600:{
+            items:2
+        }
+    }
+});
+
+
+$('.loop-dokter').owlCarousel({
+    lazyLoad:true,
+    center: true,
+    items:1,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:3000,
+    dots: false,
+    responsive:{
+      600:{
+            items:3
+        },
+      300:{
+            items:2,
+            animateOut: 'slideOutDown',
+            animateIn: 'flipInX',
+        }
+    }
+});
+</script>
+
 <script>
     $(document).ready(function() {
         // Tangani saat formulir dikirim
@@ -328,6 +423,19 @@ object-fit: cover; /* Gambar tetap proporsional dan potong sesuai container */
         });
     });
 
+    $(".loop-footer").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            responsive:{
+                0:{ items:1 },
+                600:{ items:2 },
+                1000:{ items:3 }
+            }
+        });
     
     </script>
 
